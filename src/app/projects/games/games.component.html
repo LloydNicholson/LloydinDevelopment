@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="list-group">
+    <p class="list-group-item-heading">Games</p>
+    <iframe class="list-group-item" frameborder="0" src="https://itch.io/embed/293653" width="208" height="167"></iframe>
+    <iframe class="list-group-item" frameborder="0" src="https://itch.io/embed/196206" width="208" height="167"></iframe>
+  </div>
+
+  <div *ngFor="let item of array" >{{item.name + " is " + item.age + " years old"}}</div>
+  <div id="exampleDiv">{{createTable()}}</div>
+</div>
+
