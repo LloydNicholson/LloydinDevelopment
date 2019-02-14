@@ -10,10 +10,16 @@ import { GamesComponent } from './projects/games/games.component';
 import { ApplicationsComponent } from './projects/applications/applications.component';
 import {FormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { PostsComponent } from './posts/posts.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PixelArtComponent } from './pixel-art/pixel-art.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'projects', component: ProjectsComponent},
+  {path: 'pixel-art', component: PixelArtComponent},
+  {path: 'portfolio', component: PortfolioComponent},
+  {path: 'posts', component: PostsComponent},
 ];
 
 @NgModule({
@@ -24,7 +30,10 @@ const appRoutes: Routes = [
     ProjectsComponent,
     GamesComponent,
     ApplicationsComponent,
-    HomeComponent
+    HomeComponent,
+    PostsComponent,
+    PortfolioComponent,
+    PixelArtComponent
   ],
   imports: [
     BrowserModule,
