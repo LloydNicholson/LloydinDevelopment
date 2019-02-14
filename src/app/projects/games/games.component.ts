@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
@@ -9,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class GamesComponent implements OnInit {
   games = [
     {name: 'Noob Trainer', url: 'https://rustylloyd.itch.io/noobtrainer2018',
-      imageUrl: ''},
+      imageUrl: 'https://lloydindevelopment.com/wp-content/uploads/2018/09/Noob-Trainer-Icon.png'},
     {name: 'Sluggers', url: 'https://rustylloyd.itch.io/sluggers',
-      imageUrl: ''},
+      imageUrl: 'https://lloydindevelopment.com/wp-content/uploads/2018/09/Screen-Shot-2018-07-17-at-18.36.52.png'},
   ];
+  serverCreationStatus = 'No server was created';
+  serverName = 'Testserver';
   constructor() { }
 
   ngOnInit() {
+    console.log(this.games);
   }
-
 }

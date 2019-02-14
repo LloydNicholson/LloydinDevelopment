@@ -1,3 +1,13 @@
-<p>
-  about me works!
-</p>
+<div class="container-fluid">
+  <label for="name">Enter your name: </label>
+  <!--<input type="text" id="name" class="form-control" [(ngModel)]="visitorsName">-->
+  <input type="text" id="name" class="form-control" #visitorName>
+  <button (click)="logWelcome(visitorName)" class="btn btn-primary pull-right">Submit</button>
+</div>
+
+<div class="container-fluid">
+  <p *ngIf="entered">Hi {{visitorName.value}}, thanks for visiting my site that was created using Angular 7 and Angular CLI.
+    I am experimenting with Angular to create the best experience possible. Angular is quick and allows me to switch between information very quickly.
+  </p>
+</div>
+

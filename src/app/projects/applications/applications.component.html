@@ -1,27 +1,22 @@
-<div class="container-fluid">
-  <ul class="list-group list-unstyled">
-    <li class="list-group-item-heading">Applications</li>
-    <a
-      class="list-group-item"
-      *ngFor="let app of applications"
-      [href]="app.url">{{app.name}}
-      <span>
-        <img [src]="app.imageUrl" [alt]="app.name" style="max-height: 80px">
-      </span>
-    </a>
-  </ul>
-</div>
-<div class="container-fluid">
-  <ul class="list-group list-unstyled">
-    <li class="list-group-item-heading">Websites</li>
-    <a
-      class="list-group-item"
-      *ngFor="let website of websites"
-      [href]="website.url">{{website.name}}
-      <span>
-        <img [src]="website.imageUrl" [alt]="website.name" style="max-height: 80px">
-      </span>
-    </a>
-  </ul>
-</div>
-
+<ul class="list-group list-unstyled">
+  <li class="list-group-item-heading">Applications</li>
+  <a
+    class="list-group-item"
+    *ngFor="let app of applications"
+    [href]="app.url">{{app.name}}
+    <span>
+      <img [src]="app.imageUrl" [alt]="app.name" style="max-height: 80px">
+    </span>
+  </a>
+</ul>
+<ul class="list-group list-unstyled">
+  <li class="list-group-item-heading">Websites</li>
+  <a
+    class="list-group-item"
+    *ngFor="let website of websites"
+    [href]="website.url">{{website.name}}
+    <span>
+      <img [src]="website.imageUrl" [alt]="website.name" style="max-height: 80px">
+    </span>
+  </a>
+</ul>

@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class ApplicationsComponent implements OnInit {
   websites = [
     {name: 'Kid Connect Accounting', url: 'https://www.kidcon.co.za',
-      imageUrl: 'https://www.kidcon.co.za/images/favicon.ico'},
+      imageUrl: 'https://lloydindevelopment.com/wp-content/uploads/2018/09/Slug-Thinner.png'},
     {name: 'Lloyd in Development',
       url: 'https://www.lloydindevelopment.com',
       imageUrl: 'https://lloydindevelopment.files.wordpress.com/2018/02/blue-house-e1518603633182.png?resize=111%2C111'},
