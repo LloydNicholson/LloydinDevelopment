@@ -1,11 +1,13 @@
-<ul class="list-group list-unstyled">
-  <li class="list-group-item-heading">Games</li>
-  <a
-    class="list-group-item"
-    *ngFor="let game of games"
-    [href]="game.url">{{game.name}}
-    <span>
-      <img [src]="game.imageUrl" [alt]="game.name" style="max-height: 80px">
-    </span>
-  </a>
-</ul>
+<h3 class="h3">Games</h3>
+<a
+  class="list-group-item clearfix"
+  *ngFor="let game of games"
+  [href]="game.url">
+  <div class="pull-left">
+    <h3 class="list-group-item-heading">{{ game.name }}</h3>
+    <p class="list-group-item-text">{{ game.details }}</p>
+  </div>
+  <span class="pull-right">
+        <img [src]="game.imageUrl" alt="{{ game.name }}" class="img-responsive" style="min-height: 60px; max-height: 100px;">
+      </span>
+</a>
