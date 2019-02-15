@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
-import { AboutMeComponent } from './about-me/about-me.component';
+import { AboutMeComponent } from './home/about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { GamesComponent } from './projects/games/games.component';
 import { ApplicationsComponent } from './projects/applications/applications.component';
