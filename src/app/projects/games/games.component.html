@@ -1,0 +1,11 @@
+<ul class="list-group list-unstyled">
+  <li class="list-group-item-heading">Games</li>
+  <a
+    class="list-group-item"
+    *ngFor="let game of games"
+    [href]="game.url">{{game.name}}
+    <span>
+      <img [src]="game.imageUrl" [alt]="game.name" style="max-height: 80px">
+    </span>
+  </a>
+</ul>
