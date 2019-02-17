@@ -14,6 +14,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PixelArtComponent } from './pixel-art/pixel-art.component';
 import { FooterComponent } from './footer/footer.component';
+import {CollapseDirective} from './shared/collapse.directive';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     PostsComponent,
     PortfolioComponent,
     PixelArtComponent,
-    FooterComponent
+    FooterComponent,
+    CollapseDirective
   ],
   imports: [
     BrowserModule,

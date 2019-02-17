@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" id="mainNavbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <button appCollapse (click)="onToggleShow()" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -9,7 +9,7 @@
       </button>
       <a routerLink="/" class="navbar-brand">Lloyd in Development</a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
+    <div [ngClass]="{show: isShown}" id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/projects">Projects</a></li>

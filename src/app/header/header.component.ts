@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title = 'Lloyd in Development';
+  isShown = false;
+  onToggleShow() {
+    this.isShown = !this.isShown;
+  }
 }
