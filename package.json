@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng b --prod --base-href https://github.com/LloydNicholson/LloydinDevelopment/ && npx ngh --dir=dist/lloydInDevelopment"
+    "deploy":  "ng build --prod --output-path docs --base-href /LloydinDevelopment/"
   },
   "private": true,
   "dependencies": {
