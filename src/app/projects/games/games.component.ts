@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoggingService} from '../../logging.service';
 
 @Component({
   selector: 'app-games',
@@ -16,11 +17,11 @@ export class GamesComponent implements OnInit {
       imageUrl: 'https://lloydindevelopment.com/wp-content/uploads/2018/09/Screen-Shot-2018-07-17-at-18.36.52.png',
       details: 'A semi-finished platformer'},
   ];
-  serverCreationStatus = 'No server was created';
-  serverName = 'Testserver';
-  constructor() { }
+  constructor(private loggingService: LoggingService) { }
 
   ngOnInit() {
-    console.log(this.games);
+    this.games.forEach((game) => {
+      this.loggingService.logAnyChange(game.name);
+    });
   }
 }
