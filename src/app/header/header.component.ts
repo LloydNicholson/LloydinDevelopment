@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   title = 'Lloyd in Development';
   author = 'Lloyd Nicholson';
   isShown = false;
-  onToggleShow() {
+  constructor() {}
+
+  ngOnInit(): void {
+  }
+
+  onToggleShow(event: Event) {
     this.isShown = !this.isShown;
   }
 }
