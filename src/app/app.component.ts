@@ -5,9 +5,9 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
   templateUrl: './app.component.html',
   styles: [`
     body {
-      padding-top: 100px;
+      padding-top: 90px;
       font-size: 22px;
-      font-family: "Sukhumvit Set", serif;
+      font-family: Geneva, sans-serif;
     }`],
   encapsulation: ViewEncapsulation.None
 })

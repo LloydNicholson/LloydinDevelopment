@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent implements OnInit {
-  @Input() pagePost: Array<{title: string, date: Date, author: string, content: string}>;
+  @Input() pagePost: Array<{id: number, title: string, date: Date, author: string}>;
   constructor() { }
 
   ngOnInit() {
