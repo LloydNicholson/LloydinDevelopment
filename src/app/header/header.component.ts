@@ -11,10 +11,10 @@ export class HeaderComponent implements OnInit {
   isShown = false;
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  onToggleShow(event: Event) {
+  onToggleShow() {
     this.isShown = !this.isShown;
   }
 }

@@ -1,4 +1,4 @@
-import {Directive, HostBinding, HostListener} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appCollapse]'
@@ -6,10 +6,9 @@ import {Directive, HostBinding, HostListener} from '@angular/core';
 export class CollapseDirective {
   @HostBinding('class.show') isShown = false;
 
-  constructor() {}
-  @HostListener('click') toggleShow(eventData: Event) {
+  constructor(private elRef: ElementRef) {}
+  @HostListener('click') toggleShow() {
     this.isShown = !this.isShown;
-    // console.log(eventData.target);
+    console.log(this.elRef.nativeElement.getElementsByTagName('li'));
   }
-
 }
