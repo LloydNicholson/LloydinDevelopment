@@ -1,8 +1,13 @@
 #mainNavbar {
-  background-color: #21344f;
+  background-color: #1c2252;
+}
+.navbar-nav {
   font-size: 22px;
+  font-family: "Tamil MN", sans-serif;
 }
 .navbar-brand {
-  font-size: 30px;
+  font-size: 28px;
+  font-family: "Tamil MN", sans-serif;
+  font-weight: bold;
+  color: #9d9d9d;
 }
-

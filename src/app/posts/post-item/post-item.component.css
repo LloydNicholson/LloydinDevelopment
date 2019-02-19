@@ -1,6 +1,7 @@
 .panel-heading {
-  background-color: #30507d;
-  color: whitesmoke;
+  background-color: #1c2252;
+  color: darkgray;
+  font-family: "Tamil MN", sans-serif;
 }
 p {
   white-space: pre-line;
