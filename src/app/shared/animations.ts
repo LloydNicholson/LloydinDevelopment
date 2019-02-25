@@ -9,9 +9,9 @@ export class Animations {
       transition('void => *', [
         style({
           opacity: 0,
-          transform: 'translateY(+50px)'
+          transform: 'translateY(+100px)'
         }),
-        animate('600ms ease-in-out')]),
+        animate('1000ms ease-in')]),
     ]
   );
 
@@ -23,9 +23,9 @@ export class Animations {
       transition('void => *', [
         style({
           opacity: 0,
-          transform: 'translateX(+50px)'
+          transform: 'translateX(+100px)'
         }),
-        animate('600ms ease-in-out')]),
+        animate('1000ms ease-in')]),
     ]
   );
 
@@ -37,9 +37,9 @@ export class Animations {
       transition('void => *', [
         style({
           opacity: 0,
-          transform: 'translateX(-50px)'
+          transform: 'translateX(-100px)'
         }),
-        animate('600ms ease-in-out')]),
+        animate('1000ms ease-in')]),
     ]
   );
 }

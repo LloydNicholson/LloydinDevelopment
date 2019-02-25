@@ -5,7 +5,9 @@ import {Animations} from '../../shared/animations';
   selector: 'app-post-item',
   templateUrl: './post-item.component.html',
   styleUrls: ['./post-item.component.css'],
-  animations: [Animations.slideInUp]
+  animations: [
+    Animations.slideInUp,
+  ]
 })
 
 export class PostItemComponent implements OnInit {
