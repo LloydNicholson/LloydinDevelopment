@@ -14,6 +14,7 @@ export class Animations {
         animate('500ms ease-in-out')]),
     ]
   );
+
   static slideInRight = trigger('slideInRight', [
       state('in', style({
         opacity: 1,
