@@ -7,9 +7,10 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
     body {
       padding-top: 80px;
       font-size: 22px;
+      font-family: 'Quicksand', sans-serif;
     }
-    * {
-      font-family: '';
+    h1, h2, h3, h4, h5, h6, nav {
+      font-family: 'Jura', sans-serif;
     }`],
   encapsulation: ViewEncapsulation.None
 })
