@@ -11,7 +11,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateY(+50px)'
         }),
-        animate('500ms ease-in-out')]),
+        animate('600ms ease-in-out')]),
     ]
   );
 
@@ -25,7 +25,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateX(+50px)'
         }),
-        animate('500ms ease-in-out')]),
+        animate('600ms ease-in-out')]),
     ]
   );
 
@@ -39,7 +39,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateX(-50px)'
         }),
-        animate('500ms ease-in-out')]),
+        animate('600ms ease-in-out')]),
     ]
   );
 }

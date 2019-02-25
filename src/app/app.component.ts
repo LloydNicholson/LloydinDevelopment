@@ -5,7 +5,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
   templateUrl: './app.component.html',
   styles: [`
     body {
-      padding-top: 90px;
+      padding-top: 80px;
       font-size: 22px;
     }
     * {

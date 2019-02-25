@@ -1,11 +1,12 @@
-<button class="btn btn-info float-left" (click)="onPreviousPost()"
-        style="position: fixed; left: 3em; bottom: 20px; z-index: 10;"
-        [hidden]="postNumber === 0">Previous
-</button>
-<button class="btn btn-success float-right" (click)="onNextPost()"
-        style="position: fixed; right: 4.5em; bottom: 20px; z-index: 10"
-        [hidden]="postNumber === pagePost.length-1">Next
-</button>
+<div class="btn-group-justified" style="position: relative; top: 10px">
+  <button class="btn btn-info float-sm-left" (click)="onPreviousPost()"
+             [hidden]="postNumber === 0">Previous
+  </button>
+  <button class="btn btn-success float-sm-right" (click)="onNextPost()"
+          [hidden]="postNumber === pagePost.length-1">Next
+  </button>
+</div>
+
 <div
   *ngIf="postNumber === 0"
   [@slideInUp]
