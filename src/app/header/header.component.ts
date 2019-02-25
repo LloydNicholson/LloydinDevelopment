@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +8,13 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
   title = 'Lloyd in Development';
   author = 'Lloyd Nicholson';
-  isShown = false;
-  constructor() {}
+  @ViewChild('collapseDiv') collapseDiv: ElementRef;
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
   }
 
-  onToggleShow() {
-    this.isShown = !this.isShown;
+  onNextPage() {
+    this.renderer.removeClass(this.collapseDiv.nativeElement, 'show');
   }
 }

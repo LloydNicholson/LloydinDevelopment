@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LoggingService} from '../../logging.service';
+import {LoggingService} from '../../shared/logging.service';
 
 @Component({
   selector: 'app-games',

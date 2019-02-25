@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -16,14 +15,7 @@ import { PixelArtComponent } from './pixel-art/pixel-art.component';
 import { FooterComponent } from './footer/footer.component';
 import {CollapseDirective} from './shared/collapse.directive';
 import { PostItemComponent } from './posts/post-item/post-item.component';
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'pixel-art', component: PixelArtComponent},
-  {path: 'portfolio', component: PortfolioComponent},
-  {path: 'posts', component: PostsComponent},
-];
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +36,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
