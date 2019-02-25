@@ -1,73 +1,160 @@
-<div class="container-fluid"
-  *ngFor="let post of pagePost">
-
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>{{post.title}}</h2>
-      <h3>{{post.date | date}}</h3>
-      <h4> by {{post.author}}</h4>
+<button class="btn btn-info float-left" (click)="onPreviousPost()"
+        style="position: fixed; left: 3em; bottom: 20px; z-index: 10;"
+        [hidden]="postNumber === 0">Previous
+</button>
+<button class="btn btn-success float-right" (click)="onNextPost()"
+        style="position: fixed; right: 4.5em; bottom: 20px; z-index: 10"
+        [hidden]="postNumber === pagePost.length-1">Next
+</button>
+<div
+  *ngIf="postNumber === 0"
+  [@slideInUp]
+  class="card"
+  style="margin-top: 20px">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-header">
+    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
+    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <br>
+    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <span id="post1">
+      Good day everyone. I have been making games and pixel art for a few months now. It is new to me and I meet
+      challenges that push me to my limits. I would like to share some sources of inspiration and some tools which
+      have made it easier to begin this journey of game development.
+      The first tool, which started with a conversation with a friend of mine, is GameMaker Studio 2. It is a
+      phenomenal development tool and game making engine developed by Yoyo Games Ltd and it has helped me make a few
+      small but significant steps towards developing a fully-fledged game.
+      The second tool is <a href="http://www.aseprite.org">Aseprite</a>, which is such a fun and modest but powerful
+      pixel art development system. I spent hours of time developing and creating pixel art with this app. Such a fun
+      interface and create for creating almost any type of pixel art.
+      The third tool is <a href="http://www.udemy.com">Udemy</a>. What an incredible platform! It has given me the
+      opportunity to learn unique and relevant skills. It has given me a better understanding of pixel art and game
+      making. A shout out to Heartbeast and Shaun Spaulding for the amount of information they have available on their
+      youtube channels and Udemy. Fantastic work.
+      The last tool is <a href="http://itch.io">Itch</a>. It is a great site to get inspiration for games and find new
+      indie games that are exciting and fun to play.
+      Lastly, off the topic, I’ve just updated Sluggers on Mac, so you can download the Itch.io app and play it there
+      or you can play it on your Mac or download it from my
+      <a routerLink="/projects">projects page</a> page. It is also available for Windows. I will update the Windows
+      version in the next day or so.
+      Thanks for catching up with me and remember, keep dreaming!
+    </span>
     </div>
-    <div class="panel-body">
+  </div>
+</div>
 
-      <div *ngIf="post.id === 0" id="post1">
-        <p><span>Good day everyone. I have been making games and pixel art for a few months now. It is new to me and I meet challenges that push me to my limits. I would like to share some sources of inspiration and some tools which have made it easier to begin this journey of game development.</span></p>
-        <p><span>The first tool, which started with a conversation with a friend of mine, is GameMaker Studio 2. It is a phenomenal development tool and game making engine developed by Yoyo Games Ltd and it has helped me make a few small but significant steps towards developing a fully-fledged game.</span></p>
-        <p><span>The second tool is <a href="http://www.aseprite.org">Aseprite</a>, which is such a fun and modest but powerful pixel art development system. I spent hours of time developing and creating pixel art with this app. Such a fun interface and create for creating almost any type of pixel art.</span></p>
-        <p><span>The third tool is <a href="http://www.udemy.com">Udemy</a>. What an incredible platform! It has given me the opportunity to learn unique and relevant skills. It has given me a better understanding of pixel art and game making. A shout out to Heartbeast and Shaun Spaulding for the amount of information they have available on their youtube channels and Udemy. Fantastic work.</span></p>
-        <p><span>The last tool is <a href="http://itch.io">Itch</a>. It is a great site to get inspiration for games and find new indie games that are exciting and fun to play.</span></p>
-        <p><span>Lastly, off the topic, I’ve just updated Sluggers on Mac, so you can download the Itch.io app and play it there or you can play it on your Mac or download it from my
-          <a routerLink="/projects">projects page</a> page. It is also available for Windows. I will update the Windows version in the next day or so.</span></p>
-        <p><span>Thanks for catching up with me and remember, keep dreaming!</span></p>
-      </div>
-
-      <div *ngIf="post.id === 1" id="post2">
-        <p><span>Wouldn’t that be cool?! A platformer that has various aspects of battle royale games and building games encompassing one unique genre – Platform Builder Royale.</span></p>
-        <p><span>Games like Fortnite, Minecraft and Fallout 4 have peaked my interest in creating building-type games with an action component for many years now.</span></p>
-        <p><span>It’s interesting how these games have incorporated building into their main gameplay mechanics. I find it surprising that the general public have been so accommodating and proactive in purchasing these games in the millions.</span></p>
-        <p><span>Minecraft started the craze and it has had worldwide praise and is now being used in some schools as an
+<div
+  *ngIf="postNumber === 1"
+  [@slideInUp]
+  class="card"
+  style="margin-top: 20px">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-header">
+    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
+    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <br>
+    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <span id="post2">
+        Wouldn’t that be cool?! A platformer that has various aspects of battle royale games and building games
+        encompassing one unique genre – Platform Builder Royale.Games like Fortnite, Minecraft and Fallout 4 have peaked
+        my interest in creating building-type games with an action component for many years now.It’s interesting how
+        these games have incorporated building into their main gameplay mechanics. I find it surprising that the general
+        public have been so accommodating and proactive in purchasing these games in the millions.Minecraft started the
+        craze and it has had worldwide praise and is now being used in some schools as an
         education tool. As a teacher, the education aspect fascinates me. It brings with it the hope that games can be a
         medium for change in children’s lives. The vilification of video games, as a medium that brings about chaos and
         bloodshed, is not the way I see video games. I see them as fun, intriguing, delightful, challenging and an art
         form that tell stories so full of colour, depth and beauty that they draw you in to the story being told. They
         make me wonder about myself and they lead me to introspection of my own character and choices in life. Games can
         bring about an awesome learning experience while taking you on a journey through peaks and valleys of emotion at
-        the same time.
-        </span></p>
-        <p><span>I digress, but the point I was making is that video games can be a learning tool that can lead us to think deeply about our lives.
-          Education is the perfect place to go with gaming because it’s one of the most interactive forms of education and learning.
-          We learn as children while playing games and we grow our self identity by reacting to others while playing games.
-          The learning experiences are endless and the younger generation shouldn’t start to see gaming as the villain but rather as a means to learn various things through play.
-          Children’s minds are shaped easily at a young age and it is hard to imagine we can keep technology away from them forever (part from moving away from civilisation completely).
-          So why do we try to keep technology and games away from them when it’s an impossible task? This new generation will need a healthy relationship with technology and gaming in particular.
-          Moderation with an educational game could stimulate and change they way the think for the better. Let’s not make games out to be the enemy.
-          Let’s create a world where the newest game isn’t something to be feared because of the ramifications of the content it portrays, but rather one to be admired as an educational device for change in children’s lives.
-        </span></p>
-      </div>
-
-      <div *ngIf="post.id === 2" id="post3" >
-
-        <p><span>Hello fellow coding and gaming enthusiasts. I have started work on a new, although very simple application that draws a bar graph in different colours onto the screen.</span></p>
-
-            <p><span>
-            Believe it or not this is one of the most challenging things I have done in my coding journey so far.
-            To many, a bar graph may seem simple and quite monotonous but it has brought me to understand new coding terms, functions and phrases that I have struggled with in the past. That’s the awesome part of this bar graph generator. I have learnt something new!
-            I wasn’t an A student in mathematics at high school, I was okay at trigonometry and I didn’t enjoy geometry.
-            I’ve been able to do things that I never dreamt of doing when I first started coding.
-            </span></p>
-            <p><span>My somewhat limited mathematics knowledge has proved a useful trait in my endeavours. I have improved over the years and my addition and subtraction is something I’m quite proud of.
-            I can now answer some of those quick fire mathematics questions that will be asked of someone nearby when in peril and the never-ending question of who still owes money on the bill at the restaurant you’ve been at for the past 30 minutes, can also be solved, by me.</span></p>
-          <p><span>Coding is so exciting and I’ve really enjoyed starting and continuing the process. I hope to start a game making journey at some point in the future. That would be the next step. Maybe sometime soon.</span></p>
-          <p><span>P.S. Try out my bar graph generator to the right and download it on itch.io.</span></p>
-          <p><span>There are still many things I would like to change and I will implement those changes soon.</span></p>
-
-      </div>
-
-      <div *ngIf="post.id === 3" id="post4">
-        <p>I have create my first functional angular application. Angular is a development tool create to help web developers to make applications quicker and more responsive using a <em>single webpage</em>
-        The applications made with <a href="https://www.angular.io">Angular 7</a> are fast and effective. They load images, links, pages and html only when necessary.
-        This creates a seamless experience </p>
-      </div>
-      <h3 class="pull-left">L.N.</h3>
+        the same time. I digress, but the point I was making is that video games can be a learning tool that can lead us
+        to think deeply about our lives.
+        Education is the perfect place to go with gaming because it’s one of the most interactive forms of education and
+        learning.
+        We learn as children while playing games and we grow our self identity by reacting to others while playing
+        games.
+        The learning experiences are endless and the younger generation shouldn’t start to see gaming as the villain but
+        rather as a means to learn various things through play.
+        Children’s minds are shaped easily at a young age and it is hard to imagine we can keep technology away from
+        them forever (part from moving away from civilisation completely).
+        So why do we try to keep technology and games away from them when it’s an impossible task? This new generation
+        will need a healthy relationship with technology and gaming in particular.
+        Moderation with an educational game could stimulate and change they way the think for the better. Let’s not make
+        games out to be the enemy.
+        Let’s create a world where the newest game isn’t something to be feared because of the ramifications of the
+        content it portrays, but rather one to be admired as an educational device for change in children’s lives.
+      </span>
     </div>
   </div>
 </div>
+
+<div
+  *ngIf="postNumber === 2"
+  [@slideInUp]
+  class="card"
+  style="margin-top: 20px">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-header">
+    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
+    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <br>
+    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <span id="post3">
+        Hello fellow coding and gaming enthusiasts. I have started work on a new, although very simple application that
+        draws a bar graph in different colours onto the screen.
+        Believe it or not this is one of the most challenging things I have done in my coding journey so far.
+        To many, a bar graph may seem simple and quite monotonous but it has brought me to understand new coding terms,
+        functions and phrases that I have struggled with in the past. That’s the awesome part of this bar graph
+        generator. I have learnt something new!
+        I wasn’t an A student in mathematics at high school, I was okay at trigonometry and I didn’t enjoy geometry.
+        I’ve been able to do things that I never dreamt of doing when I first started coding.
+        My somewhat limited mathematics knowledge has proved a useful trait in my endeavours. I have improved over the
+        years and my addition and subtraction is something I’m quite proud of.
+        I can now answer some of those quick fire mathematics questions that will be asked of someone nearby when in
+        peril and the never-ending question of who still owes money on the bill at the restaurant you’ve been at for the
+        past 30 minutes, can also be solved, by me.
+        Coding is so exciting and I’ve really enjoyed starting and continuing the process. I hope to start a game making
+        journey at some point in the future. That would be the next step. Maybe sometime soon.
+        P.S. Try out my bar graph generator to the right and download it on itch.io.
+        There are still many things I would like to change and I will implement those changes soon.
+      </span>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="postNumber === 3"
+  [@slideInUp]
+  class="card"
+  style="margin-top: 20px">
+  <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  <div class="card-header">
+    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
+    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <br>
+    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <span id="post4">
+        I have create my first functional Angular-based application. Angular is a development tool create to help web
+        developers to make applications quicker and more responsive using a <em>single website</em>
+        The applications made with <a href="https://www.angular.io">Angular 7</a> are fast and effective. They load
+        images, links, pages and html only when necessary.
+        This creates a seamless experience
+      </span>
+    </div>
+  </div>
+</div>
+
+
+

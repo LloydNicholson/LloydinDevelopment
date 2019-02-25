@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Animations} from '../../shared/animations';
 
 @Component({
   selector: 'app-about-me',
@@ -7,12 +8,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
     p, input {
       padding-top: 10px;
     }
-    .panel-heading {
-      background-color: #1c2252;
-      color: darkgray;
-      font-family: "Tamil MN", sans-serif;
-    }
-  `]
+  `],
+  animations: [Animations.slideInUp]
 })
 export class AboutMeComponent implements OnInit {
   entered = false;
@@ -21,14 +18,5 @@ export class AboutMeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(this.name.nativeElement);
-  // }
-
-  logWelcome(visitorsName: HTMLInputElement) {
-    console.log(visitorsName.value);
-    this.entered = true;
   }
 }

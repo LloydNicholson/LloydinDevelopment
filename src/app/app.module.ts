@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import {CollapseDirective} from './shared/collapse.directive';
 import { PostItemComponent } from './posts/post-item/post-item.component';
 import {AppRoutingModule} from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {AppRoutingModule} from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
   ],
