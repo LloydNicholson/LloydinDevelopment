@@ -1,27 +1,39 @@
-<h3 class="h3">Applications</h3>
-<a
-  class="list-group-item clearfix"
-  *ngFor="let app of applications"
-  [href]="app.url">
-  <div class="pull-left">
-    <h3 class="list-group-item-heading">{{app.name}}</h3>
+<div class="container-fluid" [@slideInRight]>
+  <h1>My Creations</h1>
+  <h2 class="jumbotron">My Applications</h2>
+  <div class="card-columns">
+    <div class="card"
+         id="applicationCard"
+         style="width: 18rem;"
+         *ngFor="let app of applications">
+      <h4 class="card-header">{{ app.name }}</h4>
+      <img class="card-img-top"
+           [src]="app.imageUrl"
+           [alt]="app.name">
+      <div class="card-body">
+        <p class="card-text">{{ app.details }}</p>
+        <a class="btn btn-primary" [href]="app.url">Go to page</a>
+      </div>
+    </div>
   </div>
-  <span class="pull-right">
-        <img [src]="app.imageUrl" alt="{{ app.name }}" class="img-responsive" style="min-height: 60px; max-height: 100px;">
-      </span>
-</a>
+</div>
 
-<h3 class="h3">Websites</h3>
-<a
-  class="list-group-item clearfix"
-  *ngFor="let website of websites"
-  [href]="website.url">
-  <div class="pull-left">
-    <h3 class="list-group-item-heading">{{ website.name }}</h3>
+<div class="container-fluid" [@slideInRight]>
+  <h3 class="jumbotron">My Websites</h3>
+  <div class="card-columns">
+    <div class="card"
+         id="websiteCard"
+         style="width: 18rem;"
+         *ngFor="let website of websites">
+      <h4 class="card-header">{{ website.name }}</h4>
+      <img class="card-img-top"
+           [src]="website.imageUrl"
+           [alt]="website.name">
+      <div class="card-body">
+        <p class="card-text">{{ website.details }}</p>
+        <a class="btn btn-primary" [href]="website.url">Go to website</a>
+      </div>
+    </div>
   </div>
-  <span class="pull-right">
-        <img [src]="website.imageUrl" alt="{{ website.name }}" class="img-responsive" style="min-height: 60px; max-height: 100px;">
-      </span>
-</a>
 
-
+</div>

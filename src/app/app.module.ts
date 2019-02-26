@@ -32,7 +32,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PixelArtComponent,
     FooterComponent,
     CollapseDirective,
-    PostItemComponent
+    PostItemComponent,
   ],
   imports: [
     BrowserModule,

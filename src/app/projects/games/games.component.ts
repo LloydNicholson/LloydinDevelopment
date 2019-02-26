@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {LoggingService} from '../../shared/logging.service';
+import {Animations} from '../../shared/animations';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+  styleUrls: ['./games.component.css'],
+  animations: [
+    Animations.slideInRight,
+  ]
 })
 export class GamesComponent implements OnInit {
   games = [

@@ -1,15 +1,19 @@
-<h3 class="h3">Games</h3>
-<a
-  class="list-group-item clearfix"
-  *ngFor="let game of games"
-  [href]="game.url">
-  <div class="pull-left">
-    <h3 class="list-group-item-heading">{{ game.name }}</h3>
-    <p class="list-group-item-text">{{ game.details }}</p>
+<div class="container-fluid" [@slideInRight]>
+  <h2 class="jumbotron">My Games</h2>
+  <div class="card-columns">
+    <div class="card"
+         id="gameCard"
+         style="width: 18rem;"
+         *ngFor="let game of games">
+      <h4 class="card-header">{{ game.name }}</h4>
+      <img class="card-img-top"
+           [src]="game.imageUrl"
+           [alt]="game.name">
+      <div class="card-body">
+        <p class="card-text">{{ game.details }}</p>
+        <a class="btn btn-primary" [href]="game.url">Go to page</a>
+      </div>
+    </div>
   </div>
-  <span class="pull-right">
-        <img [src]="game.imageUrl" alt="{{ game.name }}" class="img-responsive" style="min-height: 60px; max-height: 100px;">
-      </span>
-</a>
-
+</div>
 

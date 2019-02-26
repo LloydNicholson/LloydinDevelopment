@@ -1,4 +1,4 @@
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {animate, query, state, style, transition, trigger} from '@angular/animations';
 
 export class Animations {
   static slideInUp = trigger('slideInUp', [
