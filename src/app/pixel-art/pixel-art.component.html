@@ -1,10 +1,9 @@
-<div class="card-deck">
-  <div [@slideInUp]
-       class="card text-white bg-secondary"
-       style="max-width: 16rem"
+<div class="card-columns"
+     [@slideInUp]>
+  <div class="card p-3 text-white text-center bg-secondary"
        *ngFor="let image of images">
-    <div class="card-header">{{image.name}}</div>
+    <div class="card-header"><h4>{{image.name}}</h4></div>
     <img class="card-img-bottom" [src]="image.imgUrl" [alt]="image.name">
-    <div class="card-footer">{{image.date | date}}</div>
+    <div class="card-footer"><h6><cite>{{image.date | date}}</cite></h6></div>
   </div>
 </div>
