@@ -1,3 +1,10 @@
-<p>
-  pixel-art works!
-</p>
+<div class="card-deck">
+  <div [@slideInUp]
+       class="card text-white bg-secondary"
+       style="max-width: 16rem"
+       *ngFor="let image of images">
+    <div class="card-header">{{image.name}}</div>
+    <img class="card-img-bottom" [src]="image.imgUrl" [alt]="image.name">
+    <div class="card-footer">{{image.date | date}}</div>
+  </div>
+</div>

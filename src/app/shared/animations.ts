@@ -1,4 +1,4 @@
-import {animate, query, state, style, transition, trigger} from '@angular/animations';
+import {animate, group, keyframes, query, state, style, transition, trigger} from '@angular/animations';
 
 export class Animations {
   static slideInUp = trigger('slideInUp', [
@@ -11,7 +11,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateY(+100px)'
         }),
-        animate('1000ms ease-in')]),
+        animate('1000ms ease-in-out')]),
     ]
   );
 
@@ -25,7 +25,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateX(+100px)'
         }),
-        animate('1000ms ease-in')]),
+        animate('1000ms ease-in-out')]),
     ]
   );
 
@@ -39,7 +39,54 @@ export class Animations {
           opacity: 0,
           transform: 'translateX(-100px)'
         }),
-        animate('1000ms ease-in')]),
+        animate('1000ms ease-in-out')]),
     ]
   );
+
+  static flyInOut =  trigger('flyInOut', [
+    state('in', style({
+      width: 120,
+      transform: 'translateX(0)', opacity: 1
+    })),
+    transition('void => *', [
+      style({
+        opacity: 0,
+        transform: 'translateX(0)',
+        offset: 0
+      }),
+      group([
+        animate('0.2s ease', style({
+          opacity: 0.5,
+          transform: 'translateX(120px)',
+          offset: 0.1
+        })),
+        animate('0.3s ease', style({
+          opacity: 1,
+          transform: 'translateX(60px)',
+          offset: 0.2
+        })),
+        animate('0.8s ease', style({
+          opacity: 1,
+          transform: 'translateX(0)',
+          offset: 1
+        })),
+      ])
+    ]),
+    transition('* => void', [
+      group([
+        animate('0.1s ease', style({
+          transform: 'translateX(20px)',
+          opacity: 1
+        })),
+        animate('0.2s ease', style({
+          transform: 'translateX(50px)',
+          opacity: 0.6
+        })),
+        animate('0.5s ease', style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ])
+  ]);
 }
