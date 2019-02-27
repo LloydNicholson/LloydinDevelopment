@@ -9,12 +9,12 @@ export class HeaderComponent implements OnInit {
   title = 'Lloyd in Development';
   author = 'Lloyd Nicholson';
   @ViewChild('collapseDiv') collapseDiv: ElementRef;
-  constructor(private renderer: Renderer2) {}
+    constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
   }
 
-  onNextPage() {
+  onNextPage(event: Event) {
     this.renderer.removeClass(this.collapseDiv.nativeElement, 'show');
   }
 }

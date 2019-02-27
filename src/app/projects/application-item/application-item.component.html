@@ -1,0 +1,11 @@
+<div class="card text-center bg-light"
+     style="min-width: 200px">
+  <div class="card-header"><h4>{{ app.name }}</h4></div>
+  <img class="card-img-bottom"
+       [src]="app.imageUrl"
+       [alt]="app.name">
+  <div class="card-body">
+    <p class="card-text">{{ app.details }}</p>
+    <a class="btn btn-primary stretched-link" [href]="app.url">Go to page</a>
+  </div>
+</div>
