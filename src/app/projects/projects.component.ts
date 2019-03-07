@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
       url: 'https://palota-ionic-assessment-mar2019-starter-xprrpk.stackblitz.io',
       imageUrl: 'http://diymag.com/media/img/Artists/M/Mumford-and-Sons/_1500x1000_crop_center-center_75/' +
         'mumfordandsons_philsharp_diy_20150423_2047x1365_2.jpg',
-      details: 'An dynamic music information app I created using the Ionic framework, http requests and REST API ' +
+      details: 'A dynamic music information app I created using the Ionic framework, http requests and REST API ' +
         '(best viewed on mobile devices).'
     }
   ];
