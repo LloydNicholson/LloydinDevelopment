@@ -27,7 +27,16 @@ export class ProjectsComponent implements OnInit {
       name: 'Bar Graph Generator',
       url: 'https://rustylloyd.itch.io/bar-graph-generator',
       imageUrl: 'https://img.itch.zone/aW1hZ2UvMjc2MDI2LzEzNDU1MzQucG5n/original/BWZKR3.png',
-      details: 'A small bar graph generator in it\'s infancy.'}
+      details: 'A small bar graph generator in it\'s infancy.'
+    },
+    {
+      name: 'Ionic Music Artist App',
+      url: 'https://palota-ionic-assessment-mar2019-starter-xprrpk.stackblitz.io',
+      imageUrl: 'http://diymag.com/media/img/Artists/M/Mumford-and-Sons/_1500x1000_crop_center-center_75/' +
+        'mumfordandsons_philsharp_diy_20150423_2047x1365_2.jpg',
+      details: 'An dynamic music information app I created using the Ionic framework, http requests and REST API ' +
+        '(best viewed on mobile devices).'
+    }
   ];
   games = [
     {
