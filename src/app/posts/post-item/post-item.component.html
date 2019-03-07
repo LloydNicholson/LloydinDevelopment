@@ -1,8 +1,10 @@
 <div class="btn-group-justified" style="position: relative; top: 10px">
   <button class="btn btn-info float-sm-left" (click)="onPreviousPost()"
-             [hidden]="postNumber === 0">Previous</button>
+          [hidden]="postNumber === 0">Previous
+  </button>
   <button class="btn btn-success float-sm-right" (click)="onNextPost()"
-          [hidden]="postNumber === pagePost.length-1">Next</button>
+          [hidden]="postNumber === pagePost.length-1">Next
+  </button>
 </div>
 
 <div
@@ -12,14 +14,14 @@
   style="margin-top: 20px">
   <!--<img class="card-img-top" src="..." alt="Card image cap">-->
   <div class="card-header">
-    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
-    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <h2 class="card-title">{{ pagePost[postNumber].title }}</h2>
+    <h5 class="card-subtitle text-muted">{{ pagePost[postNumber].date | date:'fullDate' }}</h5>
     <br>
-    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+    <h6 class="card-subtitle text-muted"><cite>{{ pagePost[postNumber].author }}</cite></h6>
   </div>
   <div class="card-body">
     <div class="card-text">
-      <span id="post1">
+      <div id="post1">
       Good day everyone. I have been making games and pixel art for a few months now. It is new to me and I meet
       challenges that push me to my limits. I would like to share some sources of inspiration and some tools which
       have made it easier to begin this journey of game development.
@@ -40,7 +42,7 @@
       <a routerLink="/projects">projects page</a> page. It is also available for Windows. I will update the Windows
       version in the next day or so.
       Thanks for catching up with me and remember, keep dreaming!
-    </span>
+    </div>
     </div>
   </div>
 </div>
@@ -53,13 +55,13 @@
   <!--<img class="card-img-top" src="..." alt="Card image cap">-->
   <div class="card-header">
     <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
-    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <h5 class="card-subtitle text-muted">{{pagePost[postNumber].date | date:'fullDate'}}</h5>
     <br>
     <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
   </div>
   <div class="card-body">
     <div class="card-text">
-      <span id="post2">
+      <div id="post2">
         Wouldn’t that be cool?! A platformer that has various aspects of battle royale games and building games
         encompassing one unique genre – Platform Builder Royale.Games like Fortnite, Minecraft and Fallout 4 have peaked
         my interest in creating building-type games with an action component for many years now.It’s interesting how
@@ -88,7 +90,7 @@
         games out to be the enemy.
         Let’s create a world where the newest game isn’t something to be feared because of the ramifications of the
         content it portrays, but rather one to be admired as an educational device for change in children’s lives.
-      </span>
+      </div>
     </div>
   </div>
 </div>
@@ -100,14 +102,14 @@
   style="margin-top: 20px">
   <!--<img class="card-img-top" src="..." alt="Card image cap">-->
   <div class="card-header">
-    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
-    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <h2 class="card-title">{{ pagePost[postNumber].title }}</h2>
+    <h5 class="card-subtitle text-muted">{{ pagePost[postNumber].date | date:'fullDate' }}</h5>
     <br>
-    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+    <h6 class="card-subtitle text-muted"><cite>{{ pagePost[postNumber].author }}</cite></h6>
   </div>
   <div class="card-body">
     <div class="card-text">
-      <span id="post3">
+      <div id="post3">
         Hello fellow coding and gaming enthusiasts. I have started work on a new, although very simple application that
         draws a bar graph in different colours onto the screen.
         Believe it or not this is one of the most challenging things I have done in my coding journey so far.
@@ -125,7 +127,7 @@
         journey at some point in the future. That would be the next step. Maybe sometime soon.
         P.S. Try out my bar graph generator to the right and download it on itch.io.
         There are still many things I would like to change and I will implement those changes soon.
-      </span>
+      </div>
     </div>
   </div>
 </div>
@@ -137,14 +139,14 @@
   style="margin-top: 20px">
   <!--<img class="card-img-top" src="..." alt="Card image cap">-->
   <div class="card-header">
-    <h2 class="card-title">{{pagePost[postNumber].title}}</h2>
-    <h4 class="card-subtitle">{{pagePost[postNumber].date | date}}</h4>
+    <h2 class="card-title">{{ pagePost[postNumber].title }}</h2>
+    <h5 class="card-subtitle text-muted">{{ pagePost[postNumber].date | date:'fullDate' }}</h5>
     <br>
-    <h6 class="card-subtitle text-muted"><cite>{{pagePost[postNumber].author}}</cite></h6>
+    <h6 class="card-subtitle text-muted"><cite>{{ pagePost[postNumber].author }}</cite></h6>
   </div>
   <div class="card-body">
     <div class="card-text">
-      <span id="post4">
+      <div id="post4">
         I have created my first functional Angular-based application. Angular is a development tool created to help web
         developers to make applications quicker and more responsive using a <em>single webpage.</em>
         The applications made with <a href="https://www.angular.io">Angular 7</a> are fast and effective. They load
@@ -152,7 +154,7 @@
         This creates a seamless experience using an Angular website. The data behind the scenes is ready to use at a moments notice
         and it creates an extremely smooth experience. My first experience with Angular was overwhelming but I now find it extremely useful
         and fun to create dynamic applications.
-      </span>
+      </div>
     </div>
   </div>
 </div>

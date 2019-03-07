@@ -8,6 +8,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
       padding-top: 90px;
       font-size: 22px;
       font-family: 'Quicksand', sans-serif;
+      line-height: 40px;
     }
     h1, h2, h3, h4, h5, h6, nav {
       font-family: 'Jura', sans-serif;
