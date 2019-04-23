@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Animations} from '../../shared/animations';
+import {Game} from '../projects.model';
 
 @Component({
   selector: 'app-game-item',
@@ -7,7 +8,7 @@ import {Animations} from '../../shared/animations';
   styleUrls: ['./game-item.component.css']
 })
 export class GameItemComponent implements OnInit {
-  @Input() game: {name: string, url: string, imageUrl: string, details: string};
+  @Input() game: Game;
   constructor() { }
 
   ngOnInit() {

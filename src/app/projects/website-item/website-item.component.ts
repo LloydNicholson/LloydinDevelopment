@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Website} from '../projects.model';
 
 @Component({
   selector: 'app-website-item',
@@ -6,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./website-item.component.css']
 })
 export class WebsiteItemComponent implements OnInit {
-  @Input() website: {name: string, url: string, imageUrl: string, details: string};
+  @Input() website: Website;
   constructor() { }
 
   ngOnInit() {

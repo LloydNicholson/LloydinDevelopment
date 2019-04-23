@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Application} from '../projects.model';
 
 @Component({
   selector: 'app-application-item',
@@ -6,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./application-item.component.css']
 })
 export class ApplicationItemComponent implements OnInit {
-  @Input() app: {name: string, url: string, imageUrl: string, details: string};
+  @Input() app: Application;
   constructor() { }
 
   ngOnInit() {
