@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Animations } from '../shared/animations';
 import { DataService } from '../shared/data.service';
 import { Subscription } from 'rxjs';
@@ -24,7 +24,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isLoading = true;
     this.websitesSub = this.dataService.getWebsites().subscribe((websites: Website[]) => {
       this.websites = websites;
       this.isLoading = false;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @Input() title = 'Lloyd in Development';
-  @Input() author = 'Lloyd Nicholson';
+  title = 'Lloyd in Development';
+  author = 'Lloyd Nicholson';
 
   constructor() {
   }

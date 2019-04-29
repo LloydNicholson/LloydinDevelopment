@@ -27,6 +27,7 @@ import { GameItemComponent } from './projects/game-item/game-item.component';
 import { WebsiteItemComponent } from './projects/website-item/website-item.component';
 import { DevelopmentDetailComponent } from './portfolio/development-detail/development-detail.component';
 import { environment } from '../environments/environment';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { environment } from '../environments/environment';
     GameItemComponent,
     WebsiteItemComponent,
     DevelopmentDetailComponent,
+    SidenavListComponent,
   ],
   imports: [
     BrowserModule,
