@@ -13,7 +13,7 @@ import { CollapseDirective } from './shared/collapse.directive';
 import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './navigation/header/header.component';
 import { AboutMeComponent } from './home/about-me/about-me.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';

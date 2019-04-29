@@ -2,9 +2,12 @@
     <mat-card-header>
         <mat-card-title>{{ skill.name }}</mat-card-title>
         <mat-card-subtitle>{{ skill.experienceLevel }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ skill.projectType }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="skill.projects">
-        <p>{{ skill.projectType }}</p>
+        <a style="text-decoration: none" *ngFor="let project of skill.projects" [href]="project.url">
+            <br>
+            {{ project.name }}</a>
     </mat-card-content>
 </mat-card>
 
