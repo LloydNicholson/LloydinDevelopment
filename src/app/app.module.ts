@@ -2,8 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
+import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material.module';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CollapseDirective } from './shared/collapse.directive';
 import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
@@ -21,8 +25,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ApplicationItemComponent } from './projects/application-item/application-item.component';
 import { GameItemComponent } from './projects/game-item/game-item.component';
 import { WebsiteItemComponent } from './projects/website-item/website-item.component';
-import { HttpClientModule } from '@angular/common/http';
 import { DevelopmentDetailComponent } from './portfolio/development-detail/development-detail.component';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +54,10 @@ import { DevelopmentDetailComponent } from './portfolio/development-detail/devel
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,34 +1,24 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <h2 class="jumbotron text-center">My Applications</h2>
-      <div class="card-columns" [@slideInRight]>
-        <app-application-item
-          *ngFor="let app of applicationData"
-          [app]="app"></app-application-item>
-      </div>
-    </div>
-  </div>
+<h2>My Applications</h2>
+<section fxLayout="row" *ngIf="!isLoading">
+    <app-application-item
+        *ngFor="let app of applications"
+        [app]="app"></app-application-item>
+</section>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
 
-  <div class="row">
-    <div class="col-sm-12">
-      <h2 class="jumbotron text-center">My Games</h2>
-      <div class="card-columns" [@slideInRight]>
-        <app-game-item
-          *ngFor="let game of gameData"
-          [game]="game"></app-game-item>
-      </div>
-    </div>
-  </div>
+<h2>My Games</h2>
+<section fxLayout="row" *ngIf="!isLoading">
+    <app-game-item
+        *ngFor="let game of games"
+        [game]="game"></app-game-item>
+</section>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
 
-  <div class="row">
-    <div class="col-sm-12">
-      <h2 class="jumbotron text-center">My Websites</h2>
-      <div class="card-columns" [@slideInRight]>
-        <app-website-item
-          *ngFor="let website of websiteData"
-          [website]="website"></app-website-item>
-      </div>
-    </div>
-  </div>
-</div>
+<h2>My Websites</h2>
+<section fxLayout="row" *ngIf="!isLoading">
+    <app-website-item
+        *ngFor="let website of websites"
+        [website]="website"></app-website-item>
+</section>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+

@@ -1,11 +1,12 @@
-<div class="card text-center bg-light"
-     style="min-width: 200px">
-  <div class="card-header"><h4>{{ app.name }}</h4></div>
-  <img class="card-img-bottom"
-       [src]="app.imageUrl"
-       [alt]="app.name">
-  <div class="card-body">
-    <p class="card-text">{{ app.description }}</p>
-    <a class="btn btn-primary stretched-link" [href]="app.url">Go to page</a>
-  </div>
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ app.name }}</mat-card-title>
+    </mat-card-header>
+    <img class="card-image" mat-card-image [src]="app.imageUrl" [alt]="app.name">
+    <mat-card-content>
+        <p>{{ app.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button [href]="app.url">Go to page</a>
+    </mat-card-actions>
+</mat-card>

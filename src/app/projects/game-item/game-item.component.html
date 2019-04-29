@@ -1,12 +1,12 @@
-<div class="card text-center bg-light"
-     style="min-width: 200px"
-     id="gameCard">
-  <div class="card-header"><h4>{{ game.name }}</h4></div>
-  <img class="card-img-top"
-       [src]="game.imageUrl"
-       [alt]="game.name">
-  <div class="card-body">
-    <p class="card-text">{{ game.description }}</p>
-    <a class="btn btn-primary stretched-link" [href]="game.url">Go to page</a>
-  </div>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ game.name }}</mat-card-title>
+  </mat-card-header>
+  <img class="card-image" mat-card-image [src]="game.imageUrl" [alt]="game.name">
+  <mat-card-content>
+    <p>{{ game.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button [href]="game.url">Go to page</a>
+  </mat-card-actions>
+</mat-card>

@@ -1,32 +1,27 @@
-export class Website {
-  constructor(
-      public name: string,
-      public url: string,
-      public imageUrl: string,
-      public description: string
-  ) {
-  }
+export interface Website {
+  name: string;
+  url: string;
+  imageUrl: string;
+  description: string;
+  id?: string;
 }
 
-export class Application {
-  constructor(
-      public name: string,
-      public url: string,
-      public imageUrl: string,
-      public description: string
-  ) {
-  }
+export interface Application {
+  name: string;
+  url: string;
+  imageUrl: string;
+  description: string;
+  id?: string;
 }
 
-export class Game {
-  constructor(
-      public name: string,
-      public url: string,
-      public imageUrl: string,
-      public description: string
-  ) {
-  }
+export interface Game {
+  name: string;
+  url: string;
+  imageUrl: string;
+  description: string;
+  id?: string;
 }
+
 
 export class ProjectData {
   constructor(
@@ -37,16 +32,6 @@ export class ProjectData {
   }
 }
 
-export class Skill {
-  constructor(
-      public name: string,
-      public experienceLevel: 'Expert' | 'Advanced' | 'Intermediate' | 'Beginner',
-      public projectType: 'Website' | 'Game' | 'Application' | 'Hybrid',
-      public projects?: Array<{name: string, url: string}>
-  ) {
-  }
-
-}
 // export interface Skill {
 //   name: string;
 //   experienceLevel: 'Expert' | 'Advanced' | 'Intermediate' | 'Beginner';

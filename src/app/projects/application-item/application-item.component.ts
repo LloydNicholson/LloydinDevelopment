@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Application} from '../projects.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Application } from '../projects.model';
 
 @Component({
   selector: 'app-application-item',
@@ -8,7 +8,9 @@ import {Application} from '../projects.model';
 })
 export class ApplicationItemComponent implements OnInit {
   @Input() app: Application;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

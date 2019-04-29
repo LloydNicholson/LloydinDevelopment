@@ -1,16 +1,10 @@
-<div class="container-fluid">
-    <h2 class="jumbotron">My Skills</h2>
-    <div class="card-columns">
-        <div class="card bg-light text-center border-dark" *ngFor="let skill of mySkills">
-            <div class="card-header">{{ skill.name }}</div>
-            <div class="card-body" *ngIf="skill.projects">
-                <a style="text-decoration: none" *ngFor="let project of skill.projects"
-                   [href]="project.url">{{ project.name }}
-                    <hr>
-                </a>
-            </div>
-            <div class="card-footer">Skill Level: {{ skill.experienceLevel }}</div>
-        </div>
-    </div>
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ skill.name }}</mat-card-title>
+        <mat-card-subtitle>{{ skill.experienceLevel }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="skill.projects">
+        <p>{{ skill.projectType }}</p>
+    </mat-card-content>
+</mat-card>
 

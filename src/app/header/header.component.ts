@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +8,10 @@ import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core
 export class HeaderComponent implements OnInit {
   title = 'Lloyd in Development';
   author = 'Lloyd Nicholson';
-  @ViewChild('collapseDiv') collapseDiv: ElementRef;
-    constructor(private renderer: Renderer2) {}
 
-  ngOnInit() {
+  constructor() {
   }
 
-  onNextPage(event: Event) {
-    this.renderer.removeClass(this.collapseDiv.nativeElement, 'show');
+  ngOnInit() {
   }
 }

@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Animations} from '../../shared/animations';
-import {Game} from '../projects.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Game } from '../projects.model';
 
 @Component({
   selector: 'app-game-item',
@@ -9,7 +8,9 @@ import {Game} from '../projects.model';
 })
 export class GameItemComponent implements OnInit {
   @Input() game: Game;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

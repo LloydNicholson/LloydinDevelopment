@@ -25,7 +25,7 @@ export class Animations {
           opacity: 0,
           transform: 'translateX(+100px)'
         }),
-        animate('1000ms ease-in-out')]),
+        animate('1500ms ease-in-out')]),
     ]
   );
 

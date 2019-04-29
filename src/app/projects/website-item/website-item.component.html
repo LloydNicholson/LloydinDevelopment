@@ -1,12 +1,12 @@
-<div class="card text-center bg-light"
-     style="min-width: 200px">
-  <div class="card-header"><h4>{{ website.name }}</h4></div>
-  <img class="card-img-bottom"
-       [src]="website.imageUrl"
-       [alt]="website.name">
-  <div class="card-body">
-    <p class="card-text">{{ website.description }}</p>
-    <a class="btn btn-primary stretched-link" [href]="website.url">Go to website</a>
-  </div>
-</div>
-
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ website.name }}</mat-card-title>
+    </mat-card-header>
+    <img class="card-image" mat-card-image [src]="website.imageUrl" [alt]="website.name">
+    <mat-card-content>
+        <p>{{ website.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button [href]="website.url">Go to page</a>
+    </mat-card-actions>
+</mat-card>
