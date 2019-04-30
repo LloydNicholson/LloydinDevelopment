@@ -1,28 +1,20 @@
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-
-import { CommonModule } from '@angular/common';
-import {HomeComponent} from './home/home.component';
-import {ProjectsComponent} from './projects/projects.component';
-import {PixelArtComponent} from './pixel-art/pixel-art.component';
-import {PortfolioComponent} from './portfolio/portfolio.component';
-import {PostsComponent} from './posts/posts.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'pixel-art', component: PixelArtComponent},
-  {path: 'portfolio', component: PortfolioComponent},
-  {path: 'posts', component: PostsComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule' },
+  { path: 'pixel-art', loadChildren: './pixel-art/pixel-art.module#PixelArtModule' },
+  { path: 'portfolio', loadChildren: './portfolio/portfolio.module#PortfolioModule' },
+  { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

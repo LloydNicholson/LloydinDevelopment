@@ -14,11 +14,13 @@ import { Application, Game, Website } from './projects.model';
 export class ProjectsComponent implements OnInit, OnDestroy {
   websitesSub: Subscription;
   websites: Website[];
+  isLoadingWebsites = true;
   applicationsSub: Subscription;
   applications: Application[];
+  isLoadingApplications = true;
   gamesSub: Subscription;
   games: Game[];
-  isLoading = true;
+  isLoadingGames = true;
 
   constructor(private dataService: DataService) {
   }
@@ -26,15 +28,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.websitesSub = this.dataService.getWebsites().subscribe((websites: Website[]) => {
       this.websites = websites;
-      this.isLoading = false;
+      this.isLoadingWebsites = false;
     });
     this.applicationsSub = this.dataService.getApplications().subscribe((applications: Application[]) => {
       this.applications = applications;
-      this.isLoading = false;
+      this.isLoadingApplications = false;
     });
     this.gamesSub = this.dataService.getGames().subscribe((games: Game[]) => {
       this.games = games;
-      this.isLoading = false;
+      this.isLoadingGames = false;
     });
   }
 

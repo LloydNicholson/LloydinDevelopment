@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
-  constructor(private httpClient: HttpClient, private db: AngularFirestore) {
+  constructor(private db: AngularFirestore) {
   }
 
   getWebsites() {
