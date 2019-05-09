@@ -16,5 +16,12 @@ a:active {
 
 .router {
     color: floralwhite;
-    background: #5026b7;
+    background: #4e348f;
+}
+
+:host {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }

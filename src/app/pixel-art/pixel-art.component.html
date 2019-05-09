@@ -1,11 +1,16 @@
 <h2 fxLayoutAlign="center">My Pixel Art</h2>
-<section fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-    <mat-card [@slideInUp] *ngFor="let image of images">
-        <img mat-card-image [src]="image.imgUrl" [alt]="image.name">
-        <mat-card-header>
+<section fxLayout="row wrap"
+         fxLayoutAlign="center center">
+    <mat-card [@slideInUp]
+              *ngFor="let image of images">
+        <img mat-card-image
+             [src]="image.imgUrl"
+             [alt]="image.name" />
+        <mat-card-title-group>
             <mat-card-title>{{ image.name }}</mat-card-title>
-            <mat-card-subtitle>{{ image.date | date: 'shortDate' }}</mat-card-subtitle>
-        </mat-card-header>
+            <mat-card-subtitle>
+                {{ image.date | date }}
+            </mat-card-subtitle>
+        </mat-card-title-group>
     </mat-card>
 </section>
-

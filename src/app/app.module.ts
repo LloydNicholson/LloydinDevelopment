@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { CollapseDirective } from './shared/collapse.directive';
 import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
@@ -15,9 +16,8 @@ import { DataService } from './shared/data.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { environment } from '../environments/environment';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     FooterComponent,
     CollapseDirective,
     RemoveCollapseDirective,
-    SidenavListComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,5 +41,4 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

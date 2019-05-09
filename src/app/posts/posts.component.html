@@ -2,7 +2,8 @@
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <mat-expansion-panel *ngFor="let post of posts">
         <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
-        <p>{{ post.date }}</p>
-        <p>{{ post.content }}</p>
+        <h3>{{ post.date | date }}</h3>
+        <h4>{{ post.author }}</h4>
+        <p [innerHTML]="post.content"></p>
     </mat-expansion-panel>
 </mat-accordion>

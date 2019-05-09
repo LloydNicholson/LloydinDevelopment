@@ -6,20 +6,19 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
   mySkills: Skill[];
   skillsSub: Subscription;
 
-  constructor(private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.skillsSub = this.dataService.getMySkills().subscribe((skills: Skill[]) => {
-      this.mySkills = skills;
-    });
+    this.skillsSub = this.dataService
+      .getMySkills()
+      .subscribe((skills: Skill[]) => {
+        this.mySkills = skills;
+      });
   }
-
 }

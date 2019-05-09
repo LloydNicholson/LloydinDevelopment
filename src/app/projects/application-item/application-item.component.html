@@ -1,12 +1,10 @@
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>{{ app.name }}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image [src]="app.imageUrl" [alt]="app.name">
-    <mat-card-content>
-        <p>{{ app.description }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <a mat-button color="primary" [href]="app.url">Go to page</a>
-    </mat-card-actions>
+  <img mat-card-image [src]="app.imageUrl" [alt]="app.name" />
+  <mat-card-title>{{ app.name }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ app.description }}</p>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" [href]="app.url"
+    ><mat-icon>explore</mat-icon>Visit</a
+  >
 </mat-card>

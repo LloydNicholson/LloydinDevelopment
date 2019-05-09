@@ -1,4 +1,10 @@
-import { Component, EventEmitter, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import { Animations } from '../shared/animations';
 import { DataService } from '../shared/data.service';
 import { Subscription } from 'rxjs';
@@ -8,8 +14,7 @@ import { Application, Game, Website } from './projects.model';
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [Animations.slideInRight],
-  encapsulation: ViewEncapsulation.None
+  animations: [Animations.slideInRight]
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   websitesSub: Subscription;
@@ -22,18 +27,21 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   games: Game[];
   isLoadingGames = true;
 
-  constructor(private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.websitesSub = this.dataService.getWebsites().subscribe((websites: Website[]) => {
-      this.websites = websites;
-      this.isLoadingWebsites = false;
-    });
-    this.applicationsSub = this.dataService.getApplications().subscribe((applications: Application[]) => {
-      this.applications = applications;
-      this.isLoadingApplications = false;
-    });
+    this.websitesSub = this.dataService
+      .getWebsites()
+      .subscribe((websites: Website[]) => {
+        this.websites = websites;
+        this.isLoadingWebsites = false;
+      });
+    this.applicationsSub = this.dataService
+      .getApplications()
+      .subscribe((applications: Application[]) => {
+        this.applications = applications;
+        this.isLoadingApplications = false;
+      });
     this.gamesSub = this.dataService.getGames().subscribe((games: Game[]) => {
       this.games = games;
       this.isLoadingGames = false;

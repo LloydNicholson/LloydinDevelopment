@@ -7,7 +7,7 @@ const appRoutes: Routes = [
   { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule' },
   { path: 'pixel-art', loadChildren: './pixel-art/pixel-art.module#PixelArtModule' },
   { path: 'portfolio', loadChildren: './portfolio/portfolio.module#PortfolioModule' },
-  { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
+  { path: 'posts', loadChildren: './posts/posts.module#PostsModule' }
 ];
 
 @NgModule({

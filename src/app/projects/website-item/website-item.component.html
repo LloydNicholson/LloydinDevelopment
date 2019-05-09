@@ -1,12 +1,15 @@
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>{{ website.name }}</mat-card-title>
-    </mat-card-header>
-    <img class="card-image" mat-card-image [src]="website.imageUrl" [alt]="website.name">
-    <mat-card-content>
-        <p>{{ website.description }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <a mat-button color="primary" [href]="website.url">Go to page</a>
-    </mat-card-actions>
+  <img
+    class="card-image"
+    mat-card-image
+    [src]="website.imageUrl"
+    [alt]="website.name"
+  />
+  <mat-card-title>{{ website.name }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ website.description }}</p>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" [href]="website.url"
+    ><mat-icon>explore</mat-icon>Visit</a
+  >
 </mat-card>

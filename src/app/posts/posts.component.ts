@@ -10,8 +10,7 @@ import { Post } from './post.model';
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
   isLoading = false;
-  constructor(private postService: PostService) {
-  }
+  constructor(private postService: PostService) {}
 
   ngOnInit() {
     this.isLoading = true;

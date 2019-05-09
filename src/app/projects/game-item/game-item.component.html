@@ -1,12 +1,15 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ game.name }}</mat-card-title>
-  </mat-card-header>
-  <img class="card-image" mat-card-image [src]="game.imageUrl" [alt]="game.name">
+  <img
+    class="card-image"
+    mat-card-image
+    [src]="game.imageUrl"
+    [alt]="game.name"
+  />
+  <mat-card-title>{{ game.name }}</mat-card-title>
   <mat-card-content>
     <p>{{ game.description }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <a mat-button color="primary" [href]="game.url">Go to page</a>
-  </mat-card-actions>
+  <a mat-stroked-button color="primary" [href]="game.url"
+    ><mat-icon>explore</mat-icon>Visit</a
+  >
 </mat-card>

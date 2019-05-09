@@ -11,17 +11,15 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     FlexLayoutModule,
     AngularFirestoreModule,
-    FormsModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     AngularFirestoreModule,
-    FormsModule,
+    FormsModule
   ],
   providers: []
 })
-export class SharedModule {
-
-}
+export class SharedModule {}
