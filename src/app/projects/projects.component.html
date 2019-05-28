@@ -1,44 +1,41 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-  <h2 fxLayoutAlign="center">My Applications</h2>
-  <section
-    fxLayout="row wrap"
-    fxLayoutAlign="center center"
-    *ngIf="!isLoadingApplications"
-    [@slideInRight]
-  >
-    <app-application-item
-      *ngFor="let app of applications"
-      [app]="app"
-    ></app-application-item>
-  </section>
-  <mat-spinner *ngIf="isLoadingApplications"></mat-spinner>
+    <h2 fxLayoutAlign="center">My Applications</h2>
+    <section
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        *ngIf="!isLoadingApplications">
+        <app-project
+            *ngFor="let app of applications"
+            type="application"
+            [project]="app"></app-project>
+    </section>
+    <mat-spinner *ngIf="isLoadingApplications"></mat-spinner>
 </div>
 
 <div fxLayout="column" fxLayoutAlign="center center">
-  <h2 fxLayoutAlign="center">My Games</h2>
-  <section
-    fxLayout="row wrap"
-    fxLayoutAlign="center center"
-    *ngIf="!isLoadingGames"
-    [@slideInRight]
-  >
-    <app-game-item *ngFor="let game of games" [game]="game"></app-game-item>
-  </section>
-  <mat-spinner *ngIf="isLoadingGames"></mat-spinner>
+    <h2 fxLayoutAlign="center">My Games</h2>
+    <section
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        *ngIf="!isLoadingGames">
+        <app-project
+            *ngFor="let game of games"
+            type="game"
+            [project]="game"></app-project>
+    </section>
+    <mat-spinner *ngIf="isLoadingGames"></mat-spinner>
 </div>
 
 <div fxLayout="column" fxLayoutAlign="center center">
-  <h2 fxLayoutAlign="center">My Websites</h2>
-  <section
-    fxLayout="row wrap"
-    fxLayoutAlign="center center"
-    *ngIf="!isLoadingWebsites"
-    [@slideInRight]
-  >
-    <app-website-item
-      *ngFor="let website of websites"
-      [website]="website"
-    ></app-website-item>
-  </section>
-  <mat-spinner *ngIf="isLoadingWebsites"></mat-spinner>
+    <h2 fxLayoutAlign="center">My Websites</h2>
+    <section
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        *ngIf="!isLoadingWebsites">
+        <app-project
+            *ngFor="let website of websites"
+            type="website"
+            [project]="website"></app-project>
+    </section>
+    <mat-spinner *ngIf="isLoadingWebsites"></mat-spinner>
 </div>

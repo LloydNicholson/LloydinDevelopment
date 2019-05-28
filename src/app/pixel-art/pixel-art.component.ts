@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Animations } from '../shared/animations';
+import { slideInUpState } from '../shared/animation';
 
 @Component({
   selector: 'app-pixel-art',
   templateUrl: './pixel-art.component.html',
   styleUrls: ['./pixel-art.component.css'],
-  animations: [Animations.slideInUp]
+  animations: [
+    slideInUpState
+  ]
 })
 export class PixelArtComponent implements OnInit {
   images: Array<{ name: string; date: Date; imgUrl: string }> = [
@@ -46,13 +48,15 @@ export class PixelArtComponent implements OnInit {
       imgUrl: 'assets/img/Potion large.png'
     },
     {
-      name: "Jo'burg City Skyline",
+      name: 'Jo\'burg City Skyline',
       date: new Date(2018, 6 - 1, 19),
       imgUrl: 'assets/img/Johannesburg City Skyline.png'
     }
   ];
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

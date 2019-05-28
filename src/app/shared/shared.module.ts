@@ -22,4 +22,5 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: []
 })
-export class SharedModule {}
+export class SharedModule {
+}

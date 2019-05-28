@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Skill } from './skill.model';
 import { Subscription } from 'rxjs';
@@ -12,13 +12,14 @@ export class PortfolioComponent implements OnInit {
   mySkills: Skill[];
   skillsSub: Subscription;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit() {
     this.skillsSub = this.dataService
-      .getMySkills()
-      .subscribe((skills: Skill[]) => {
-        this.mySkills = skills;
-      });
+    .getMySkills()
+    .subscribe((skills: Skill[]) => {
+      this.mySkills = skills;
+    });
   }
 }

@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CollapseDirective } from './shared/collapse.directive';
 import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
@@ -30,8 +30,8 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
@@ -41,4 +41,5 @@ import { environment } from '../environments/environment';
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
