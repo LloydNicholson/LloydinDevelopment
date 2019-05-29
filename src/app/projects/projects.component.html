@@ -1,8 +1,14 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-    <h2 fxLayoutAlign="center">My Applications</h2>
+<div
+    class="project-section"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+    <h2
+        class="project-header"
+        fxLayoutAlign="center">My Applications</h2>
     <section
         fxLayout="row wrap"
-        fxLayoutAlign="center center"
+        fxLayoutAlign="center"
+        [@listState]="applications?.length"
         *ngIf="!isLoadingApplications">
         <app-project
             *ngFor="let app of applications"
@@ -12,11 +18,17 @@
     <mat-spinner *ngIf="isLoadingApplications"></mat-spinner>
 </div>
 
-<div fxLayout="column" fxLayoutAlign="center center">
-    <h2 fxLayoutAlign="center">My Games</h2>
+<div
+    class="project-section"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+    <h2
+        class="project-header"
+        fxLayoutAlign="center">My Games</h2>
     <section
         fxLayout="row wrap"
-        fxLayoutAlign="center center"
+        fxLayoutAlign="center"
+        [@listState]="games?.length"
         *ngIf="!isLoadingGames">
         <app-project
             *ngFor="let game of games"
@@ -26,11 +38,17 @@
     <mat-spinner *ngIf="isLoadingGames"></mat-spinner>
 </div>
 
-<div fxLayout="column" fxLayoutAlign="center center">
-    <h2 fxLayoutAlign="center">My Websites</h2>
+<div
+    class="project-section"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+    <h2
+        class="project-header"
+        fxLayoutAlign="center">My Websites</h2>
     <section
         fxLayout="row wrap"
-        fxLayoutAlign="center center"
+        fxLayoutAlign="center"
+        [@listState]="websites?.length"
         *ngIf="!isLoadingWebsites">
         <app-project
             *ngFor="let website of websites"

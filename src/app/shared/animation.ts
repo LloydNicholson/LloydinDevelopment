@@ -1,4 +1,15 @@
-import { animate, group, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  animation,
+  group,
+  keyframes,
+  query,
+  stagger,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 
 export const slideInUpStateTrigger = trigger('slideInUpState', [
       state('in', style({
@@ -130,4 +141,13 @@ export const routeFadeStateTrigger = trigger('routeFadeState', [
       opacity: 1
     }))
   ])
+]);
+
+export const transAnimation = animation([
+  style({
+    height: '{{ height }}',
+    opacity: '{{ opacity }}',
+    backgroundColor: '{{ backgroundColor }}'
+  }),
+  animate('{{ time }}')
 ]);
