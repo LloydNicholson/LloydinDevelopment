@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-
-import { slideInUpState } from '../shared/animation';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { listStateTrigger, routeFadeStateTrigger } from '../shared/animation';
 
 @Component({
   selector: 'app-pixel-art',
   templateUrl: './pixel-art.component.html',
   styleUrls: ['./pixel-art.component.css'],
   animations: [
-    slideInUpState
+    listStateTrigger,
+    // routeFadeStateTrigger
   ]
 })
 export class PixelArtComponent implements OnInit {
+  // @HostBinding('@routeFadeState') routeFadeState = true;
   images: Array<{ name: string; date: Date; imgUrl: string }> = [
     {
       name: 'Thor',

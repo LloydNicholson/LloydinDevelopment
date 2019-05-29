@@ -1,7 +1,9 @@
 <h2 class="heading">My Skills</h2>
 <section fxLayout="row wrap"
-         fxLayoutAlign="center center">
+         fxLayoutAlign="center center"
+         [@listState]="mySkills?.length">
     <app-development-detail
         *ngFor="let skill of mySkills"
         [skill]="skill"></app-development-detail>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
 </section>

@@ -6,19 +6,16 @@
     <mat-card-title-group>
         <mat-card-title>{{ skill.name }}</mat-card-title>
         <mat-card-subtitle>{{ skill.experienceLevel }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ skill.projectType }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ skill.skillType }}</mat-card-subtitle>
     </mat-card-title-group>
-    <mat-card-actions
-        fxLayout="row"
-        fxLayoutAlign="space-around"
+    <mat-card-content
         *ngIf="skill.projects">
         <a
-            mat-icon-button
-            [matTooltip]="project.name"
-            color="primary"
+            mat-raised-button
             *ngFor="let project of skill.projects"
             [href]="project.url">
-            <mat-icon color="primary">explore</mat-icon>
+            {{ project.name }}
         </a>
-    </mat-card-actions>
+    </mat-card-content>
 </mat-card>
+

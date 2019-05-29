@@ -1,9 +1,12 @@
-<mat-accordion>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
-    <mat-expansion-panel *ngFor="let post of posts">
-        <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
-        <h3>{{ post.date | date }}</h3>
-        <h4>{{ post.author }}</h4>
-        <p [innerHTML]="post.content"></p>
-    </mat-expansion-panel>
-</mat-accordion>
+<section fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center">
+    <app-about-me></app-about-me>
+    <mat-accordion>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <mat-expansion-panel *ngFor="let post of posts">
+            <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
+            <h3>{{ post.date | date }}</h3>
+            <h4>{{ post.author }}</h4>
+            <p [innerHTML]="post.content"></p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>

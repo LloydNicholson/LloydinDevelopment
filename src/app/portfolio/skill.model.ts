@@ -2,7 +2,7 @@ import { Project } from '../projects/projects.model';
 
 export interface Skill {
   name: string;
-  projectType: string;
+  skillType: string;
   experienceLevel: string;
   imageUrl: string;
   id?: string;

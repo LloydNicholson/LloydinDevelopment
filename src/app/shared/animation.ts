@@ -1,11 +1,11 @@
-import { animate, group, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
 
-export const slideInUpState = trigger('slideInUp', [
+export const slideInUpStateTrigger = trigger('slideInUpState', [
       state('in', style({
         opacity: 1,
         transform: 'translateY(0)'
       })),
-      transition('void => *', [
+      transition(':enter', [
         style({
           opacity: 0,
           transform: 'translateY(+100px)'
@@ -14,26 +14,18 @@ export const slideInUpState = trigger('slideInUp', [
     ]
 );
 
-export const slideInRightState = trigger('slideInRight', [
-      state('in', style({
-        opacity: 1,
-        transform: 'translateX(0)'
-      })),
-      transition('void => *', [
+export const slideInRightStateTrigger = trigger('slideInRightState', [
+      transition(':enter', [
         style({
           opacity: 0,
           transform: 'translateX(+100px)'
         }),
-        animate('1500ms ease-in-out')]),
+        animate('1000ms ease-in-out')]),
     ]
 );
 
-export const slideInLeftState = trigger('slideInLeft', [
-      state('in', style({
-        opacity: 1,
-        transform: 'translateX(0)'
-      })),
-      transition('void => *', [
+export const slideInLeftStateTrigger = trigger('slideInLeftState', [
+      transition(':enter', [
         style({
           opacity: 0,
           transform: 'translateX(-100px)'
@@ -42,12 +34,12 @@ export const slideInLeftState = trigger('slideInLeft', [
     ]
 );
 
-export const flyInOutState = trigger('flyInOut', [
+export const flyInOutStateTrigger = trigger('flyInOutState', [
   state('in', style({
     width: 120,
     transform: 'translateX(0)', opacity: 1
   })),
-  transition('void => *', [
+  transition(':enter', [
     style({
       opacity: 0,
       transform: 'translateX(0)',
@@ -89,20 +81,53 @@ export const flyInOutState = trigger('flyInOut', [
   ])
 ]);
 
-export const onHoverState = trigger('hoverState', [
-    state('default', style({
-      boxShadow: '2px 3px lightgray',
-      backgroundColor: 'white',
-      color: 'black',
-      transform: 'translateX(0) translateY(0)'
-    })),
-    state('hover', style({
-      boxShadow: '4px 6px lightgray',
-      backgroundColor: 'rgba(103,58,183,0.43)',
-      color: 'white',
-      transform: 'translateX(-2px) translateY(-4px)'
-    })),
-    transition('default <=> hover', [
-        animate(300)
-    ]),
+export const hoverStateTrigger = trigger('hoverState', [
+  state('default', style({
+    boxShadow: '2px 3px lightgray',
+    backgroundColor: 'white'
+  })),
+  state('hover', style({
+    boxShadow: '4px 6px lightgray',
+    backgroundColor: 'rgba(103,58,183,0.43)',
+    transform: 'translateX(-2px) translateY(-4px)'
+  })),
+  transition('default <=> hover', [
+    animate(300)
+  ])
+]);
+
+export const listStateTrigger = trigger('listState', [
+  transition('* => *', [
+    query(':enter', [
+      style({
+        opacity: 0,
+        transform: 'translateX(100%)'
+      }),
+      stagger(300, [
+        animate('500ms ease-in', keyframes([
+          style({
+            opacity: 0.5,
+            transform: 'translateX(-10%)',
+            offset: 0.4
+          }),
+          style({
+            opacity: 1,
+            transform: 'translateX(0)',
+            offset: 1
+          })
+        ]))
+      ])
+    ], { optional: true })
+  ])
+]);
+
+export const routeFadeStateTrigger = trigger('routeFadeState', [
+  transition(':enter', [
+    style({
+      opacity: 0
+    }),
+    animate(700, style({
+      opacity: 1
+    }))
+  ])
 ]);

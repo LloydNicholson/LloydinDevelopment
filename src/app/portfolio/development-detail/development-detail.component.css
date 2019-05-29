@@ -1,15 +1,25 @@
 mat-card {
-  max-width: 250px;
-  margin: 10px;
-  border-right: 1px solid gray;
-  border-bottom: 1px solid gray;
+    max-width: 250px;
+    margin: 10px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 mat-icon:hover,
 mat-icon:active {
-  background: lightgray;
-  border-radius: 50%;
-  transform: rotateZ(360deg);
-  transition-duration: 1000ms;
+    background: lightgray;
+    border-radius: 50%;
+    transform: rotateZ(360deg);
+    transition-duration: 1000ms;
 }
+
+.mat-raised-button {
+    background-color: #d1c4e9;
+    margin-bottom: 5px;
+}
+
+.mat-raised-button:hover, .mat-raised-button:active {
+    background-color: rgba(80, 38, 183, 0.27);
+}
+
 

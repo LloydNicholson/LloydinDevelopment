@@ -1,6 +1,7 @@
 <h2 fxLayoutAlign="center">My Pixel Art</h2>
 <section fxLayout="row wrap"
-         fxLayoutAlign="center center">
+         fxLayoutAlign="center center"
+         [@listState]="images?.length">
     <app-art
         [image]="image"
         *ngFor="let image of images"></app-art>
