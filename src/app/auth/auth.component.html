@@ -1,0 +1,28 @@
+<form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="form">
+    <mat-form-field>
+        <label>
+            <input matInput formControlName="email" placeholder="email" type="text">
+        </label>
+    </mat-form-field>
+
+    <mat-form-field>
+        <label>
+            <input matInput formControlName="password" placeholder="password" type="text">
+        </label>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select formControlName="optionSelected" placeholder="Select">
+            <mat-option value="Option 1">Option</mat-option>
+            <mat-option value="Option 2">New Option</mat-option>
+            <mat-option value="Option 3">Other New Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+

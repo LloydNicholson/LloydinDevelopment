@@ -9,13 +9,13 @@
         fxLayout="row wrap"
         fxLayoutAlign="center"
         [@listState]="applications?.length"
-        *ngIf="!isLoadingApplications">
+        *ngIf="!isLoading">
         <app-project
             *ngFor="let app of applications"
             type="application"
             [project]="app"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoadingApplications"></mat-spinner>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
 </div>
 
 <div
@@ -29,13 +29,13 @@
         fxLayout="row wrap"
         fxLayoutAlign="center"
         [@listState]="games?.length"
-        *ngIf="!isLoadingGames">
+        *ngIf="!isLoading">
         <app-project
             *ngFor="let game of games"
             type="game"
             [project]="game"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoadingGames"></mat-spinner>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
 </div>
 
 <div
@@ -49,11 +49,11 @@
         fxLayout="row wrap"
         fxLayoutAlign="center"
         [@listState]="websites?.length"
-        *ngIf="!isLoadingWebsites">
+        *ngIf="!isLoading">
         <app-project
             *ngFor="let website of websites"
             type="website"
             [project]="website"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoadingWebsites"></mat-spinner>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
 </div>

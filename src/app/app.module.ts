@@ -17,7 +17,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { AuthComponent } from './auth/auth.component';
+
 import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { environment } from '../environments/environment';
     FooterComponent,
     CollapseDirective,
     RemoveCollapseDirective,
-    SidenavListComponent
+    SidenavListComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,11 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

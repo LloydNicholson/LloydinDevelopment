@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { of } from 'rxjs';
 
 @Injectable()
 export class DataService {
   constructor(private db: AngularFirestore) {
   }
 
-  getWebsites() {
-    return this.db.collection('currentWebsites').valueChanges();
-  }
-
-  getGames() {
-    return this.db.collection('currentGames').valueChanges();
-  }
-
-  getApplications() {
-    return this.db.collection('currentApplications').valueChanges();
+  getData() {
+    return of({
+      websites: this.db.collection('currentWebsites').valueChanges(),
+      games: this.db.collection('currentGames').valueChanges(),
+      applications: this.db.collection('currentApplications').valueChanges()
+    });
   }
 
   getMySkills() {

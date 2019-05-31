@@ -3,6 +3,7 @@ import { DataService } from '../shared/data.service';
 import { Subscription } from 'rxjs';
 import { Project } from './projects.model';
 import { listStateTrigger, routeFadeStateTrigger } from '../shared/animation';
+import { ProjectData } from '../shared/data.model';
 
 @Component({
   selector: 'app-projects',
@@ -15,41 +16,35 @@ import { listStateTrigger, routeFadeStateTrigger } from '../shared/animation';
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   @HostBinding('@routeFadeState') routeFadeState = true;
-  websitesSub: Subscription;
+  isLoading = true;
   websites: Project[];
-  isLoadingWebsites = true;
-  applicationsSub: Subscription;
   applications: Project[];
-  isLoadingApplications = true;
-  gamesSub: Subscription;
   games: Project[];
-  isLoadingGames = true;
+  dataSub: Subscription;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.websitesSub = this.dataService
-    .getWebsites()
-    .subscribe((websites: Project[]) => {
-      this.websites = websites;
-      this.isLoadingWebsites = false;
-    });
-    this.applicationsSub = this.dataService
-    .getApplications()
-    .subscribe((applications: Project[]) => {
-      this.applications = applications;
-      this.isLoadingApplications = false;
-    });
-    this.gamesSub = this.dataService.getGames().subscribe((games: Project[]) => {
-      this.games = games;
-      this.isLoadingGames = false;
+    this.dataSub = this.dataService
+    .getData()
+    .subscribe((data: ProjectData) => {
+      data.websites.subscribe((websites) => {
+        this.websites = websites;
+        this.isLoading = false;
+      });
+      data.games.subscribe((games) => {
+        this.games = games;
+        this.isLoading = false;
+      });
+      data.applications.subscribe((apps) => {
+        this.applications = apps;
+        this.isLoading = false;
+      });
     });
   }
 
   ngOnDestroy() {
-    this.gamesSub.unsubscribe();
-    this.applicationsSub.unsubscribe();
-    this.websitesSub.unsubscribe();
+    this.dataSub.unsubscribe();
   }
 }

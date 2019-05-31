@@ -3,9 +3,12 @@ import {
   MatButtonModule,
   MatCardModule,
   MatExpansionModule,
+  MatFormFieldModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatProgressSpinnerModule,
+  MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
   MatTooltipModule
@@ -21,7 +24,10 @@ import {
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -32,7 +38,10 @@ import {
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule {
