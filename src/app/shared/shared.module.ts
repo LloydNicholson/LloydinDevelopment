@@ -3,24 +3,30 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     AngularFirestoreModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     AngularFirestoreModule,
-    FormsModule
-  ],
-  providers: []
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
+  ]
 })
 export class SharedModule {
 }
