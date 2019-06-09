@@ -12,14 +12,10 @@ import {
 } from '@angular/animations';
 
 export const slideInUpStateTrigger = trigger('slideInUpState', [
-      state('in', style({
-        opacity: 1,
-        transform: 'translateY(0)'
-      })),
       transition(':enter', [
         style({
           opacity: 0,
-          transform: 'translateY(+100px)'
+          transform: 'translateY(100px)'
         }),
         animate('1000ms ease-in-out')]),
     ]
@@ -29,7 +25,7 @@ export const slideInRightStateTrigger = trigger('slideInRightState', [
       transition(':enter', [
         style({
           opacity: 0,
-          transform: 'translateX(+100px)'
+          transform: 'translateX(100px)'
         }),
         animate('1000ms ease-in-out')]),
     ]
@@ -94,16 +90,15 @@ export const flyInOutStateTrigger = trigger('flyInOutState', [
 
 export const hoverStateTrigger = trigger('hoverState', [
   state('default', style({
-    boxShadow: '2px 3px lightgray',
-    backgroundColor: 'white'
+    boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.3)'
   })),
   state('hover', style({
-    boxShadow: '4px 6px lightgray',
+    boxShadow: '0 10px 50px 0 rgba(0, 0, 0, 0.5)',
     backgroundColor: 'rgba(103,58,183,0.43)',
-    transform: 'translateX(-2px) translateY(-4px)'
+    transform: 'translateX(-1px) translateY(-1px)'
   })),
   transition('default <=> hover', [
-    animate(300)
+    animate('300ms ease-in-out')
   ])
 ]);
 
@@ -114,7 +109,7 @@ export const listStateTrigger = trigger('listState', [
         opacity: 0,
         transform: 'translateX(100%)'
       }),
-      stagger(300, [
+      stagger('300ms', [
         animate('500ms ease-in', keyframes([
           style({
             opacity: 0.5,
@@ -133,13 +128,20 @@ export const listStateTrigger = trigger('listState', [
 ]);
 
 export const routeFadeStateTrigger = trigger('routeFadeState', [
-  transition(':enter', [
-    style({
-      opacity: 0
-    }),
-    animate(700, style({
-      opacity: 1
-    }))
+  transition('* => *', [
+    group([
+      query(':enter', [
+        style({
+          opacity: 0
+        }),
+        animate('500ms ease-out'),
+      ], { optional: true }),
+      query(':leave', [
+        animate('500ms ease-out', style({
+          opacity: 0
+        }))
+      ], { optional: true })
+    ])
   ])
 ]);
 
@@ -149,5 +151,8 @@ export const transAnimation = animation([
     opacity: '{{ opacity }}',
     backgroundColor: '{{ backgroundColor }}'
   }),
-  animate('{{ time }}')
-]);
+  animate('{{ time }}', style({
+    height: '200px',
+    backgroundColor: 'green'
+  }))
+], { params: { height: '100px', opacity: 0, backgroundColor: 'red' } });

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { hoverStateTrigger } from '../../shared/animation';
+import { ArtPiece } from '../pixel-art.model';
 
 @Component({
   selector: 'app-art',
@@ -11,7 +12,7 @@ import { hoverStateTrigger } from '../../shared/animation';
 })
 export class ArtComponent implements OnInit {
   hoverState = 'default';
-  @Input() image: { name: string; date: Date; imgUrl: string };
+  @Input() image: ArtPiece;
 
   constructor() {
   }

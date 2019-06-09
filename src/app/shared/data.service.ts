@@ -19,4 +19,11 @@ export class DataService {
     return this.db.collection('mySkills').valueChanges();
   }
 
+  getImages() {
+    return this.db.collection('myImages').valueChanges();
+  }
+
+  getPosts() {
+    return this.db.collection('postList').valueChanges();
+  }
 }

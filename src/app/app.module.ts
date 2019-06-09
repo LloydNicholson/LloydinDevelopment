@@ -2,11 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CollapseDirective } from './shared/collapse.directive';
 import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
@@ -20,24 +15,37 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { AuthComponent } from './auth/auth.component';
 
 import { environment } from '../environments/environment';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PixelArtModule } from './pixel-art/pixel-art.module';
+import { PostsModule } from './posts/posts.module';
+import { PortfolioModule } from './portfolio/portfolio.module';
+import { ProjectsModule } from './projects/projects.module';
+import { HomeModule } from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompletedCoursesComponent } from './completed-courses/completed-courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CollapseDirective,
-    RemoveCollapseDirective,
     SidenavListComponent,
-    AuthComponent
+    AuthComponent,
+    CompletedCoursesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
     SharedModule,
+    PixelArtModule,
+    PostsModule,
+    PortfolioModule,
+    ProjectsModule,
+    HomeModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

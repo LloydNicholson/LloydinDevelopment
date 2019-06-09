@@ -1,27 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { listStateTrigger, routeFadeStateTrigger } from '../shared/animation';
-import { ArtService } from './art.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { listStateTrigger } from '../shared/animation';
 import { ArtPiece } from './pixel-art.model';
+import { Subscription } from 'rxjs';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-pixel-art',
   templateUrl: './pixel-art.component.html',
   styleUrls: ['./pixel-art.component.css'],
   animations: [
-    routeFadeStateTrigger,
     listStateTrigger,
   ]
 })
-export class PixelArtComponent implements OnInit {
-  // @HostBinding('@routeFadeState') routeFadeState = true; // not working due to clash of two concurrent animations
+export class PixelArtComponent implements OnInit, OnDestroy {
   images: ArtPiece[];
+  imagesSub: Subscription;
+  isLoading = true;
 
-  constructor(private artService: ArtService) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.artService.getImages().subscribe((images) => {
+    this.imagesSub = this.dataService.getImages()
+    .subscribe((images: ArtPiece[]) => {
       this.images = images;
+      this.isLoading = false;
     });
+  }
+
+  ngOnDestroy() {
+    this.imagesSub.unsubscribe();
   }
 }

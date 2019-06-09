@@ -6,10 +6,10 @@
         class="project-header"
         fxLayoutAlign="center">My Applications</h2>
     <section
+        *ngIf="!isLoading"
         fxLayout="row wrap"
         fxLayoutAlign="center"
-        [@listState]="applications?.length"
-        *ngIf="!isLoading">
+        [@listState]="applications?.length">
         <app-project
             *ngFor="let app of applications"
             type="application"
@@ -26,10 +26,10 @@
         class="project-header"
         fxLayoutAlign="center">My Games</h2>
     <section
+        *ngIf="!isLoading"
         fxLayout="row wrap"
         fxLayoutAlign="center"
-        [@listState]="games?.length"
-        *ngIf="!isLoading">
+        [@listState]="games?.length">
         <app-project
             *ngFor="let game of games"
             type="game"
@@ -46,10 +46,10 @@
         class="project-header"
         fxLayoutAlign="center">My Websites</h2>
     <section
+        *ngIf="!isLoading"
         fxLayout="row wrap"
         fxLayoutAlign="center"
-        [@listState]="websites?.length"
-        *ngIf="!isLoading">
+        [@listState]="websites?.length">
         <app-project
             *ngFor="let website of websites"
             type="website"

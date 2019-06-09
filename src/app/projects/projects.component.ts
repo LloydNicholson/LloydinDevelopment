@@ -1,8 +1,8 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Subscription } from 'rxjs';
 import { Project } from './projects.model';
-import { listStateTrigger, routeFadeStateTrigger } from '../shared/animation';
+import { listStateTrigger } from '../shared/animation';
 import { ProjectData } from '../shared/data.model';
 
 @Component({
@@ -10,12 +10,10 @@ import { ProjectData } from '../shared/data.model';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
   animations: [
-    routeFadeStateTrigger,
     listStateTrigger
   ]
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-  @HostBinding('@routeFadeState') routeFadeState = true;
   isLoading = true;
   websites: Project[];
   applications: Project[];
@@ -29,15 +27,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.dataSub = this.dataService
     .getData()
     .subscribe((data: ProjectData) => {
-      data.websites.subscribe((websites) => {
+      data.websites.subscribe((websites: Project[]) => {
         this.websites = websites;
         this.isLoading = false;
       });
-      data.games.subscribe((games) => {
+      data.games.subscribe((games: Project[]) => {
         this.games = games;
         this.isLoading = false;
       });
-      data.applications.subscribe((apps) => {
+      data.applications.subscribe((apps: Project[]) => {
         this.applications = apps;
         this.isLoading = false;
       });

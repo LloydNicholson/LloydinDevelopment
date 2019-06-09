@@ -1,12 +1,18 @@
-<section fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center">
-    <app-about-me></app-about-me>
-    <mat-accordion>
-        <mat-spinner *ngIf="isLoading"></mat-spinner>
-        <mat-expansion-panel *ngFor="let post of posts">
-            <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
-            <h3>{{ post.date | date }}</h3>
-            <h4>{{ post.author }}</h4>
-            <p [innerHTML]="post.content"></p>
-        </mat-expansion-panel>
-    </mat-accordion>
+<section fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
+    <div
+        [ngStyle.xs]="{width: '80%'}"
+        [ngStyle.gt-sm]="{width: '100%'}">
+        <app-about-me></app-about-me>
+    </div>
+    <div>
+        <mat-accordion>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <mat-expansion-panel *ngFor="let post of posts">
+                <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
+                <h3>{{ post.date | date }}</h3>
+                <h4>{{ post.author }}</h4>
+                <p [innerHTML]="post.content"></p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
 </section>

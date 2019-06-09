@@ -1,9 +1,14 @@
-<h2 fxLayoutAlign="center">My Pixel Art</h2>
-<section
-    fxLayout="row wrap"
-    fxLayoutAlign="center"
-    [@listState]="images?.length">
-    <app-art
-        [image]="image"
-        *ngFor="let image of images"></app-art>
-</section>
+<div fxLayout="column"
+     fxLayoutAlign="center center">
+    <h2 fxLayoutAlign="center">My Pixel Art</h2>
+    <section
+        *ngIf="!isLoading"
+        fxLayout="row wrap"
+        fxLayoutAlign="center"
+        [@listState]="images?.length">
+        <app-art
+            *ngFor="let image of images"
+            [image]="image"></app-art>
+    </section>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>

@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { PostService } from './post.service';
 import { Post } from './post.model';
 import { routeFadeStateTrigger } from '../shared/animation';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-posts',
@@ -16,14 +16,15 @@ export class PostsComponent implements OnInit {
   posts: Post[] = [];
   isLoading = false;
 
-  constructor(private postService: PostService) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
     this.isLoading = true;
-    this.postService.getPosts().subscribe((posts: Post[]) => {
-      this.isLoading = false;
+    this.dataService.getPosts()
+    .subscribe((posts: Post[]) => {
       this.posts = posts;
+      this.isLoading = false;
     });
   }
 }

@@ -4,8 +4,8 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <app-header (toggledSidenav)="sidenav.toggle()"></app-header>
-        <main>
-            <router-outlet></router-outlet>
+        <main [@routeFadeState]="getAnimationData(rOutlet)">
+            <router-outlet #rOutlet="outlet"></router-outlet>
         </main>
     </mat-sidenav-content>
 </mat-sidenav-container>
