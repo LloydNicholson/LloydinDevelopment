@@ -18,3 +18,12 @@ a:active {
     color: floralwhite;
     background: #4e348f;
 }
+
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}

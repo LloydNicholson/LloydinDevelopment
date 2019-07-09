@@ -1,7 +1,7 @@
 <div fxLayout="column"
      fxLayoutAlign="center center">
     <h2 fxLayoutAlign="center">My Pixel Art</h2>
-    <section
+    <div
         *ngIf="!isLoading"
         fxLayout="row wrap"
         fxLayoutAlign="center"
@@ -9,6 +9,6 @@
         <app-art
             *ngFor="let image of images"
             [image]="image"></app-art>
-    </section>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>

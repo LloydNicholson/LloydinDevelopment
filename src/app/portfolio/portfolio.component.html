@@ -13,6 +13,6 @@
             *ngFor="let skill of mySkills"
             [skill]="skill"></app-development-detail>
     </div>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>
 

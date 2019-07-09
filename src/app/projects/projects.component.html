@@ -15,7 +15,7 @@
             type="application"
             [project]="app"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>
 
 <div
@@ -35,7 +35,7 @@
             type="game"
             [project]="game"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>
 
 <div
@@ -55,5 +55,5 @@
             type="website"
             [project]="website"></app-project>
     </section>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>

@@ -12,14 +12,14 @@ import {
 } from '@angular/animations';
 
 export const slideInUpStateTrigger = trigger('slideInUpState', [
-      transition(':enter', [
-        style({
-          opacity: 0,
-          transform: 'translateY(100px)'
-        }),
-        animate('1000ms ease-in-out')]),
-    ]
-);
+  transition(':enter', [
+    style({
+      opacity: 0,
+      transform: 'translateY(100px)'
+    }),
+    animate('1000ms ease-in-out')
+  ])
+]);
 
 export const slideInRightStateTrigger = trigger('slideInRightState', [
       transition(':enter', [
@@ -95,7 +95,7 @@ export const hoverStateTrigger = trigger('hoverState', [
   state('hover', style({
     boxShadow: '0 10px 50px 0 rgba(0, 0, 0, 0.5)',
     backgroundColor: 'rgba(103,58,183,0.43)',
-    transform: 'translateX(-1px) translateY(-1px)'
+    transform: 'translateY(-1px)'
   })),
   transition('default <=> hover', [
     animate('300ms ease-in-out')
@@ -128,20 +128,11 @@ export const listStateTrigger = trigger('listState', [
 ]);
 
 export const routeFadeStateTrigger = trigger('routeFadeState', [
-  transition('* => *', [
-    group([
-      query(':enter', [
-        style({
-          opacity: 0
-        }),
-        animate('500ms ease-out'),
-      ], { optional: true }),
-      query(':leave', [
-        animate('500ms ease-out', style({
-          opacity: 0
-        }))
-      ], { optional: true })
-    ])
+  transition(':enter', [
+    style({
+      opacity: 0
+    }),
+    animate('500ms ease-out'),
   ])
 ]);
 

@@ -1,16 +1,6 @@
 mat-card {
-    max-width: 250px;
+    max-width: 300px;
     margin: 10px;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-
-mat-icon:hover,
-mat-icon:active {
-    background: lightgray;
-    border-radius: 50%;
-    transform: rotateZ(360deg);
-    transition-duration: 1000ms;
 }
 
 .mat-raised-button {

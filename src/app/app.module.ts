@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
 
-import { CollapseDirective } from './shared/collapse.directive';
-import { RemoveCollapseDirective } from './shared/remove-collapse.directive';
-
 import { DataService } from './shared/data.service';
 
 import { AppComponent } from './app.component';
@@ -24,6 +21,16 @@ import { ProjectsModule } from './projects/projects.module';
 import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompletedCoursesComponent } from './completed-courses/completed-courses.component';
+import { en_US, NZ_I18N } from 'ng-zorro-antd';
+import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './auth/store/auth.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -45,9 +52,13 @@ import { CompletedCoursesComponent } from './completed-courses/completed-courses
     HomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    StoreModule.forRoot({ auth: authReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [DataService],
+  providers: [DataService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
