@@ -1,7 +1,8 @@
-[nz-form] {
-    margin-top: 5rem;
+.login-signup-form {
+    max-width: 500px;
+    margin: 5rem auto;
 }
 
-[nz-button] {
-    margin-right: 10px;
+.login-signup-form-button {
+    width: 100%;
 }

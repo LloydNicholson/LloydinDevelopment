@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-auth',
@@ -16,8 +16,7 @@ export class AuthComponent implements OnInit {
   constructor(
       private fb: FormBuilder,
       private authService: AuthService,
-      private angularFireAuth: AngularFireAuth,
-      private nzMessageService: NzMessageService
+      private nzNotificationService: NzNotificationService
   ) {
     this.form = fb.group(
         {
@@ -32,10 +31,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Checking if the user is already logged in from before this session
-    this.angularFireAuth.user.subscribe(() => {
-
-    });
+    this.authService.checkUserDetails();
   }
 
   onSubmit() {
@@ -43,10 +39,8 @@ export class AuthComponent implements OnInit {
     const password = this.form.value.password;
     if ((this.form.value.password === this.form.value.confirmPassword) && this.currentState === 'signup') {
       this.authService.signup(email, password);
-      this.nzMessageService.info('Sign up successful');
     } else if (this.currentState === 'login') {
       this.authService.login(email, password);
-      this.nzMessageService.info('Login successful');
     }
     return;
   }

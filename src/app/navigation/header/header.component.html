@@ -1,19 +1,16 @@
 <mat-toolbar color="primary">
-    <div fxHide.gt-xs>
+    <div fxHide.gt-xs *ngIf="isLoggedIn" fxFlex.lt-sm="10">
         <button mat-icon-button
                 (click)="onToggle()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <div>
+    <div fxFlex="40">
         <a routerLink="/">Lloyd in Development</a>
     </div>
-    <div fxLayout
-         fxLayoutAlign="flex-end"
-         *ngIf="isLoggedIn">
-        <div fxHide.xs
-             fxFlex="90">
-            <ul fxLayout
+    <div *ngIf="isLoggedIn" fxLayoutAlign="end center" fxFlex="50">
+        <div fxHide.xs>
+            <ul fxLayout="row"
                 fxLayoutGap="10px"
                 class="navigation-items">
                 <li><a mat-button
@@ -33,15 +30,11 @@
                        routerLinkActive="router">Portfolio</a></li>
             </ul>
         </div>
-        <div fxFlex="10"
-             fxFlexAlign="flex-end">
-            <button
-                nz-button
-                (click)="onLogout()">
-                <i nz-icon
-                   nzType="logout"
-                   nzTheme="outline"></i>
+        <div fxLayoutAlign="end center">
+            <button mat-icon-button (click)="onLogout()">
+                <mat-icon>exit_to_app</mat-icon>
             </button>
         </div>
     </div>
+
 </mat-toolbar>
