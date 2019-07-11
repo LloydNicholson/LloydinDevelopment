@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routeFadeStateTrigger } from './shared/animation';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',

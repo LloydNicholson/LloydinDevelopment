@@ -11,7 +11,7 @@ import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 })
 export class AuthComponent implements OnInit {
   form: FormGroup;
-  currentState = 'login';
+  currentState = 'setAuthenticated';
 
   constructor(
       private fb: FormBuilder,
@@ -31,7 +31,6 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.checkUserDetails();
   }
 
   onSubmit() {
@@ -39,7 +38,7 @@ export class AuthComponent implements OnInit {
     const password = this.form.value.password;
     if ((this.form.value.password === this.form.value.confirmPassword) && this.currentState === 'signup') {
       this.authService.signup(email, password);
-    } else if (this.currentState === 'login') {
+    } else if (this.currentState === 'setAuthenticated') {
       this.authService.login(email, password);
     }
     return;
@@ -47,7 +46,7 @@ export class AuthComponent implements OnInit {
 
   onSwitchState() {
     if (this.currentState === 'signup') {
-      this.currentState = 'login';
+      this.currentState = 'setAuthenticated';
     } else {
       this.currentState = 'signup';
     }

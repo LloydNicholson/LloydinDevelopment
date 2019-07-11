@@ -1,40 +1,41 @@
 <mat-toolbar color="primary">
-    <div fxHide.gt-xs *ngIf="isLoggedIn" fxFlex.lt-sm="10">
+    <div fxHide.gt-xs
+         fxLayout.xs="center start">
         <button mat-icon-button
                 (click)="onToggle()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <div fxFlex="40">
+    <div fxFlex.gt-sm="50">
         <a routerLink="/">Lloyd in Development</a>
     </div>
-    <div *ngIf="isLoggedIn" fxLayoutAlign="end center" fxFlex="50">
-        <div fxHide.xs>
-            <ul fxLayout="row"
-                fxLayoutGap="10px"
-                class="navigation-items">
-                <li><a mat-button
-                       routerLink="/home"
-                       routerLinkActive="router">Home</a></li>
-                <li><a mat-button
-                       routerLink="/posts"
-                       routerLinkActive="router">Posts</a></li>
-                <li><a mat-button
-                       routerLink="/projects"
-                       routerLinkActive="router">Projects</a></li>
-                <li><a mat-button
-                       routerLink="/pixel-art"
-                       routerLinkActive="router">Pixel Art</a></li>
-                <li><a mat-button
-                       routerLink="/portfolio"
-                       routerLinkActive="router">Portfolio</a></li>
-            </ul>
-        </div>
-        <div fxLayoutAlign="end center">
-            <button mat-icon-button (click)="onLogout()">
-                <mat-icon>exit_to_app</mat-icon>
-            </button>
-        </div>
+    <div fxHide.xs
+         fxFlex.gt-sm="50"
+         fxLayoutAlign="end center">
+        <ul fxLayout="row"
+            fxLayoutGap="10px"
+            class="navigation-items">
+            <li><a mat-button
+                   routerLink="/home"
+                   routerLinkActive="router">Home</a></li>
+            <li><a mat-button
+                   routerLink="/posts"
+                   routerLinkActive="router">Posts</a></li>
+            <li><a mat-button
+                   routerLink="/projects"
+                   routerLinkActive="router">Projects</a></li>
+            <li><a mat-button
+                   routerLink="/pixel-art"
+                   routerLinkActive="router">Pixel Art</a></li>
+            <li><a mat-button
+                   routerLink="/portfolio"
+                   routerLinkActive="router">Portfolio</a></li>
+        </ul>
     </div>
+    <!--        <div fxLayoutAlign="end">-->
+    <!--            <button mat-icon-button (click)="onLogout()">-->
+    <!--                <mat-icon>exit_to_app</mat-icon>-->
+    <!--            </button>-->
+    <!--        </div>-->
 
 </mat-toolbar>

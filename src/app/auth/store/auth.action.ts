@@ -1,6 +1,5 @@
 import { createAction } from '@ngrx/store';
 
-export const login = createAction('[Auth] Login');
-export const signUp = createAction('[Auth] Sign Up');
-export const logout = createAction('[Auth] Logout');
+export const setAuthenticated = createAction('[Auth] Set Authenticated');
+export const setUnauthenticated = createAction('[Auth] Set Unauthenticated');
 
