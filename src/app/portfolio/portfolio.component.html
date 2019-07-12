@@ -4,15 +4,18 @@
     <div>
         <h4>See my completed courses <a routerLink="/completed-courses">here</a>.</h4>
     </div>
-    <div
-        *ngIf="!isLoading"
-        fxLayout="row wrap"
-        fxLayoutAlign="center"
-        [@listState]="mySkills?.length">
-        <app-development-detail
-            *ngFor="let skill of mySkills"
-            [skill]="skill"></app-development-detail>
+    <div class="portfolio-items">
+        <nz-skeleton [nzActive]="isLoading" [nzLoading]="isLoading">
+            <div
+                fxLayout="row wrap"
+                fxLayoutAlign="center"
+                [@listState]="mySkills?.length">
+                <app-development-detail
+                    *ngFor="let skill of mySkills"
+                    [skill]="skill"></app-development-detail>
+            </div>
+        </nz-skeleton>
     </div>
-    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
 </div>
+
 

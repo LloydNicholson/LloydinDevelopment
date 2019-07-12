@@ -4,15 +4,16 @@
         [ngStyle.gt-sm]="{width: '100%'}">
         <app-about-me></app-about-me>
     </div>
-    <div>
-        <mat-accordion>
-            <nz-skeleton *ngIf="isLoading"></nz-skeleton>
-            <mat-expansion-panel *ngFor="let post of posts">
-                <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
-                <h3>{{ post.date | date }}</h3>
-                <h4>{{ post.author }}</h4>
-                <p [innerHTML]="post.content"></p>
-            </mat-expansion-panel>
-        </mat-accordion>
+    <div class="post-items">
+        <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let post of posts">
+                    <mat-expansion-panel-header>{{ post.title }}</mat-expansion-panel-header>
+                    <h3>{{ post.date | date }}</h3>
+                    <h4>{{ post.author }}</h4>
+                    <p [innerHTML]="post.content"></p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </nz-skeleton>
     </div>
 </section>

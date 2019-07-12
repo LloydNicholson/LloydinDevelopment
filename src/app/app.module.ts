@@ -29,6 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './auth/store/auth.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducer } from './store/app.reducer';
 
 registerLocaleData(en);
 
@@ -55,7 +56,7 @@ registerLocaleData(en);
     AngularFireAuthModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StoreModule.forRoot({ auth: authReducer }),
+    StoreModule.forRoot({ auth: authReducer, app: appReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [DataService, { provide: NZ_I18N, useValue: en_US }],

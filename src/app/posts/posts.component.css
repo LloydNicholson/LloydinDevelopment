@@ -11,9 +11,6 @@ section {
     display: block; /* must set to block if you want to perform a route animation because by default it is inline */
 }
 
-nz-skeleton {
-    display: flex;
-    align-content: center;
-    width: 90%;
+.post-items {
     height: 100%
 }

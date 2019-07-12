@@ -1,4 +1,10 @@
-mat-card {
+.card {
     max-width: 300px;
     margin: 20px;
+    text-align: center;
+}
+
+.button-link {
+    display: block;
+    width: 100%;
 }

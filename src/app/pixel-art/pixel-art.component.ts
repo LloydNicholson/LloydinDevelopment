@@ -3,6 +3,9 @@ import { listStateTrigger } from '../shared/animation';
 import { ArtPiece } from './pixel-art.model';
 import { Subscription } from 'rxjs';
 import { DataService } from '../shared/data.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/app.reducer';
+import { startLoading, stopLoading } from '../store/app.action';
 
 @Component({
   selector: 'app-pixel-art',
@@ -17,14 +20,21 @@ export class PixelArtComponent implements OnInit, OnDestroy {
   imagesSub: Subscription;
   isLoading = true;
 
-  constructor(private dataService: DataService) {
+  constructor(
+      private dataService: DataService,
+      private store: Store<AppState>) {
   }
 
   ngOnInit() {
+    this.store.select('app').subscribe((state) => {
+      this.isLoading = state.isLoading;
+    });
+
+    this.store.dispatch(startLoading());
     this.imagesSub = this.dataService.getImages()
     .subscribe((images: ArtPiece[]) => {
       this.images = images;
-      this.isLoading = false;
+      this.store.dispatch(stopLoading());
     });
   }
 

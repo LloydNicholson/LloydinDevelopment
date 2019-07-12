@@ -5,17 +5,17 @@
     <h2
         class="project-header"
         fxLayoutAlign="center">My Applications</h2>
-    <section
-        *ngIf="!isLoading"
-        fxLayout="row wrap"
-        fxLayoutAlign="center"
-        [@listState]="applications?.length">
-        <app-project
-            *ngFor="let app of applications"
-            type="application"
-            [project]="app"></app-project>
-    </section>
-    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
+    <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
+        <section
+            fxLayout="row wrap"
+            fxLayoutAlign="center"
+            [@listState]="applications?.length">
+            <app-project
+                *ngFor="let app of applications"
+                type="application"
+                [project]="app"></app-project>
+        </section>
+    </nz-skeleton>
 </div>
 
 <div
@@ -25,17 +25,17 @@
     <h2
         class="project-header"
         fxLayoutAlign="center">My Games</h2>
-    <section
-        *ngIf="!isLoading"
-        fxLayout="row wrap"
-        fxLayoutAlign="center"
-        [@listState]="games?.length">
-        <app-project
-            *ngFor="let game of games"
-            type="game"
-            [project]="game"></app-project>
-    </section>
-    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
+    <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
+        <section
+            fxLayout="row wrap"
+            fxLayoutAlign="center"
+            [@listState]="games?.length">
+            <app-project
+                *ngFor="let game of games"
+                type="game"
+                [project]="game"></app-project>
+        </section>
+    </nz-skeleton>
 </div>
 
 <div
@@ -45,15 +45,15 @@
     <h2
         class="project-header"
         fxLayoutAlign="center">My Websites</h2>
-    <section
-        *ngIf="!isLoading"
-        fxLayout="row wrap"
-        fxLayoutAlign="center"
-        [@listState]="websites?.length">
-        <app-project
-            *ngFor="let website of websites"
-            type="website"
-            [project]="website"></app-project>
-    </section>
-    <nz-skeleton *ngIf="isLoading"></nz-skeleton>
+    <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
+        <section
+            fxLayout="row wrap"
+            fxLayoutAlign="center"
+            [@listState]="websites?.length">
+            <app-project
+                *ngFor="let website of websites"
+                type="website"
+                [project]="website"></app-project>
+        </section>
+    </nz-skeleton>
 </div>

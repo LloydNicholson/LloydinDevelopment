@@ -1,6 +1,4 @@
-nz-skeleton {
-    display: flex;
-    align-content: center;
+.portfolio-items {
     width: 90%;
     height: 100%
 }
