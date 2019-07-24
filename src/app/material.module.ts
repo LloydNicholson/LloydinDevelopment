@@ -8,6 +8,7 @@ import {
   MatInputModule,
   MatListModule,
   MatProgressSpinnerModule,
+  MatRippleModule,
   MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
@@ -27,7 +28,8 @@ import {
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRippleModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -41,7 +43,8 @@ import {
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRippleModule
   ]
 })
 export class MaterialModule {

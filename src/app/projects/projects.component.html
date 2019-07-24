@@ -1,34 +1,31 @@
 <div
-    class="project-section"
+    class="section"
     fxLayout="column"
     fxLayoutAlign="center center">
     <h2
-        class="project-header"
+        class="header"
         fxLayoutAlign="center">My Applications</h2>
     <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
-        <section
-            fxLayout="row wrap"
-            fxLayoutAlign="center"
+        <div fxLayout="row wrap"
             [@listState]="applications?.length">
             <app-project
                 *ngFor="let app of applications"
                 type="application"
                 [project]="app"></app-project>
-        </section>
+        </div>
     </nz-skeleton>
 </div>
 
 <div
-    class="project-section"
+    class="section"
     fxLayout="column"
     fxLayoutAlign="center center">
     <h2
-        class="project-header"
+        class="header"
         fxLayoutAlign="center">My Games</h2>
     <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
         <section
             fxLayout="row wrap"
-            fxLayoutAlign="center"
             [@listState]="games?.length">
             <app-project
                 *ngFor="let game of games"
@@ -39,16 +36,15 @@
 </div>
 
 <div
-    class="project-section"
+    class="section"
     fxLayout="column"
     fxLayoutAlign="center center">
     <h2
-        class="project-header"
+        class="header"
         fxLayoutAlign="center">My Websites</h2>
     <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
         <section
             fxLayout="row wrap"
-            fxLayoutAlign="center"
             [@listState]="websites?.length">
             <app-project
                 *ngFor="let website of websites"

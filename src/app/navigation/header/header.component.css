@@ -26,8 +26,10 @@ a:active {
     right: 0;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+    max-width: 100%;
 }
 
-mat-toolbar {
-    width: 100%;
+.app-name {
+    font-size: 28px;
+    font-family: "Righteous", cursive;
 }
