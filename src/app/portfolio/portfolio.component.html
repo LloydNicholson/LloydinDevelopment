@@ -11,7 +11,7 @@
                 fxLayoutAlign="center"
                 [@listState]="mySkills?.length">
                 <app-development-detail
-                    *ngFor="let skill of mySkills"
+                    *ngFor="let skill of mySkills; let index"
                     [skill]="skill"></app-development-detail>
             </div>
         </nz-skeleton>

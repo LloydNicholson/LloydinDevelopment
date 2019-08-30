@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 @Injectable()
 export class DataService {
-  constructor(private db: AngularFirestore) {
-  }
+  constructor(private db: AngularFirestore) {}
 
   getData() {
     return of({
@@ -15,15 +14,27 @@ export class DataService {
     });
   }
 
-  getMySkills() {
+  getMySkills(): Observable<any[]> {
     return this.db.collection('mySkills').valueChanges();
   }
 
-  getImages() {
+  getImages(): Observable<any[]> {
     return this.db.collection('myImages').valueChanges();
   }
 
-  getPosts() {
+  getPosts(): Observable<any[]> {
     return this.db.collection('postList').valueChanges();
+  }
+
+  getCertifications(): Observable<any[]> {
+    return this.db.collection('myCertifications').valueChanges();
+  }
+
+  // if you need to add data to certifications from here
+  addCerts(name: String, imageUrl: String): void {
+    this.db.collection('myCertifications').add({
+      name,
+      imageUrl
+    });
   }
 }

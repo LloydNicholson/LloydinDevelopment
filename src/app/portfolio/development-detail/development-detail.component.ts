@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Skill } from '../skill.model';
 import { hoverStateTrigger } from '../../shared/animation';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../store/app.reducer';
+import { Project } from '../../projects/projects.model';
 
 @Component({
   selector: 'app-development-detail',
@@ -14,7 +13,7 @@ export class DevelopmentDetailComponent implements OnInit {
   @Input() skill: Skill;
   hoverState = 'default';
 
-  constructor(private store: Store<AppState>) {
+  constructor() {
   }
 
   ngOnInit() {
