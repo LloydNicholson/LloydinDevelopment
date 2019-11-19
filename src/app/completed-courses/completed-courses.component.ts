@@ -1,7 +1,6 @@
-import { DataService } from './../shared/data.service';
-import { CollectionReference, AngularFirestore } from '@angular/fire/firestore';
+import { DataService } from '../shared/data.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { CompletedCourse } from './completed-course.model';
 
 @Component({
   selector: 'app-completed-courses',
@@ -9,13 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./completed-courses.component.css']
 })
 export class CompletedCoursesComponent implements OnInit {
-  completedCourses = [];
+  completedCourses: CompletedCourse[] = [];
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
     let certificationsSub = this.dataService.getCertifications();
-    certificationsSub.subscribe(certs => {
+    certificationsSub.subscribe((certs: CompletedCourse[]) => {
       this.completedCourses = certs;
     });
   }
