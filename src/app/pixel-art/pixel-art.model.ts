@@ -1,6 +1,6 @@
 export interface ArtPiece {
   name: string;
   date: string;
-  imgUrl: string
+  imgUrl: string;
   id?: string;
 }

@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { AngularFireAuth } from "@angular/fire/auth";
-import { Store } from "@ngrx/store";
-import { AuthState } from "./store/auth.reducer";
-import { setAuthenticated, setUnauthenticated } from "./store/auth.action";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Store } from '@ngrx/store';
+import { AuthState } from './store/auth.reducer';
+import { setAuthenticated, setUnauthenticated } from './store/auth.action';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthService {
   private _userIsAuthenticated = null;
@@ -16,7 +16,7 @@ export class AuthService {
     private angularFireAuth: AngularFireAuth,
     private store: Store<{ auth: AuthState }>
   ) {
-    this.store.select("auth").subscribe((state) => {
+    this.store.select('auth').subscribe((state) => {
       this._userIsAuthenticated = state.isAuthenticated;
     });
   }
@@ -40,7 +40,7 @@ export class AuthService {
   login(email: string, password: string) {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password).then(
       () => {
-        this.router.navigate(["/home"]);
+        this.router.navigate(['/home']);
         this.store.dispatch(setAuthenticated());
       },
       (error) => {
@@ -54,7 +54,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(
         () => {
-          this.router.navigate(["/home"]);
+          this.router.navigate(['/home']);
           this.store.dispatch(setAuthenticated());
           // this.nzNotificationService.success(
           //   "Sign Up",
@@ -70,7 +70,7 @@ export class AuthService {
   logout() {
     this.angularFireAuth.auth.signOut().then(
       () => {
-        this.router.navigate(["/auth"]);
+        this.router.navigate(['/auth']);
         this.store.dispatch(setUnauthenticated());
         // this.nzNotificationService.info("Logout", "Logout Successful");
       },

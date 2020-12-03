@@ -6,18 +6,14 @@ import { ArtPiece } from '../pixel-art.model';
   selector: 'app-art',
   templateUrl: './art.component.html',
   styleUrls: ['./art.component.css'],
-  animations: [
-    hoverStateTrigger
-  ]
+  animations: [hoverStateTrigger],
 })
 export class ArtComponent implements OnInit {
-  hoverState = 'default';
   @Input() image: ArtPiece;
 
-  constructor() {
-  }
+  hoverState = 'default';
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

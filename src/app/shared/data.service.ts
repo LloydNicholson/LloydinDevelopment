@@ -10,7 +10,7 @@ export class DataService {
     return of({
       websites: this.db.collection('currentWebsites').valueChanges(),
       games: this.db.collection('currentGames').valueChanges(),
-      applications: this.db.collection('currentApplications').valueChanges()
+      applications: this.db.collection('currentApplications').valueChanges(),
     });
   }
 
@@ -31,10 +31,10 @@ export class DataService {
   }
 
   // if you need to add data to certifications from here
-  addCerts(name: String, imageUrl: String): void {
+  addCerts(name: string, imageUrl: string): void {
     this.db.collection('myCertifications').add({
       name,
-      imageUrl
+      imageUrl,
     });
   }
 }

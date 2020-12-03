@@ -6,15 +6,14 @@ export interface AuthState {
 }
 
 export const initialState: AuthState = {
-  isAuthenticated: false
+  isAuthenticated: false,
 };
 
 export const reducer = createReducer(
-    initialState,
-    on(setAuthenticated, (state) => ({ ...state, isAuthenticated: true })),
-    on(setUnauthenticated, (state) => ({ ...state, isAuthenticated: false })),
+  initialState,
+  on(setAuthenticated, (state) => ({ ...state, isAuthenticated: true })),
+  on(setUnauthenticated, (state) => ({ ...state, isAuthenticated: false }))
 );
 
-export function authReducer(state = initialState, action: Action) {
-  return reducer(state, action);
-}
+export const authReducer = (state = initialState, action: Action) =>
+  reducer(state, action);

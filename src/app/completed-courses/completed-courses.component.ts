@@ -13,7 +13,7 @@ export class CompletedCoursesComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    let certificationsSub = this.dataService.getCertifications();
+    const certificationsSub = this.dataService.getCertifications();
     certificationsSub.subscribe((certs: CompletedCourse[]) => {
       this.completedCourses = certs;
     });

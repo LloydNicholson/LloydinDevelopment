@@ -7,20 +7,19 @@ export interface State {
 }
 
 export interface AppState {
-  app: State,
-  auth: AuthState
+  app: State;
+  auth: AuthState;
 }
 
 const initialState: State = {
-  isLoading: false
+  isLoading: false,
 };
 
 const reducer = createReducer(
-    initialState,
-    on(startLoading, (state) => ({ ...state, isLoading: true })),
-    on(stopLoading, (state) => ({ ...state, isLoading: false }))
+  initialState,
+  on(startLoading, (state) => ({ ...state, isLoading: true })),
+  on(stopLoading, (state) => ({ ...state, isLoading: false }))
 );
 
-export function appReducer(state = initialState, action: Action) {
-  return reducer(state, action);
-}
+export const appReducer = (state = initialState, action: Action) =>
+  reducer(state, action);

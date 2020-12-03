@@ -11,9 +11,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css'],
-  animations: [
-    routeFadeStateTrigger
-  ]
+  animations: [routeFadeStateTrigger],
 })
 export class PostsComponent implements OnInit, OnDestroy {
   @HostBinding('@routeFadeState') routeFadeState = true;
@@ -22,9 +20,9 @@ export class PostsComponent implements OnInit, OnDestroy {
   isLoading = true;
 
   constructor(
-      private dataService: DataService,
-      private store: Store<AppState>) {
-  }
+    private dataService: DataService,
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit() {
     this.store.select('app').subscribe((state) => {
@@ -32,9 +30,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     });
 
     this.store.dispatch(startLoading());
-    this.postsSub = this.dataService
-    .getPosts()
-    .subscribe((posts: Post[]) => {
+    this.postsSub = this.dataService.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
       this.store.dispatch(stopLoading());
     });

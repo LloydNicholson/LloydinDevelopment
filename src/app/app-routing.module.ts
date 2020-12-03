@@ -4,32 +4,44 @@ import { AuthComponent } from './auth/auth.component';
 import { CompletedCoursesComponent } from './completed-courses/completed-courses.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full', data: { animation: { page: 'rootPage' } } },
   {
-    path: 'home', loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+    data: { animation: { page: 'rootPage' } },
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((mod) => mod.HomeModule),
     data: { animation: { page: 'homePage' } },
     // canLoad: [AuthGuard]
   },
   {
     path: 'projects',
-    loadChildren: () => import('./projects/projects.module').then(mod => mod.ProjectsModule),
+    loadChildren: () =>
+      import('./projects/projects.module').then((mod) => mod.ProjectsModule),
     data: { animation: { page: 'projectsPage' } },
     // canLoad: [AuthGuard]
   },
   {
     path: 'pixel-art',
-    loadChildren: () => import('./pixel-art/pixel-art.module').then(mod => mod.PixelArtModule),
+    loadChildren: () =>
+      import('./pixel-art/pixel-art.module').then((mod) => mod.PixelArtModule),
     data: { animation: { page: 'pixelArtPage' } },
     // canLoad: [AuthGuard]
   },
   {
     path: 'portfolio',
-    loadChildren: () => import('./portfolio/portfolio.module').then(mod => mod.PortfolioModule),
+    loadChildren: () =>
+      import('./portfolio/portfolio.module').then((mod) => mod.PortfolioModule),
     data: { animation: { page: 'portfolioPage' } },
     // canLoad: [AuthGuard]
   },
   {
-    path: 'posts', loadChildren: () => import('./posts/posts.module').then(mod => mod.PostsModule),
+    path: 'posts',
+    loadChildren: () =>
+      import('./posts/posts.module').then((mod) => mod.PostsModule),
     data: { animation: { page: 'postsPage' } },
     // canLoad: [AuthGuard]
   },
@@ -39,9 +51,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

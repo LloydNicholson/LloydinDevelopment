@@ -1,34 +1,36 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { AngularFireModule } from "@angular/fire";
-import { AppRoutingModule } from "./app-routing.module";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AppRoutingModule } from './app-routing.module';
 
-import { DataService } from "./shared/data.service";
+import { DataService } from './shared/data.service';
 
-import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./navigation/header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
-import { AuthComponent } from "./auth/auth.component";
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { AuthComponent } from './auth/auth.component';
 
-import { environment } from "../environments/environment";
-import { SharedModule } from "./shared/shared.module";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { PixelArtModule } from "./pixel-art/pixel-art.module";
-import { PostsModule } from "./posts/posts.module";
-import { PortfolioModule } from "./portfolio/portfolio.module";
-import { ProjectsModule } from "./projects/projects.module";
-import { HomeModule } from "./home/home.module";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CompletedCoursesComponent } from "./completed-courses/completed-courses.component";
-import { HttpClientModule } from "@angular/common/http";
-import { registerLocaleData } from "@angular/common";
-import en from "@angular/common/locales/en";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { StoreModule } from "@ngrx/store";
-import { authReducer } from "./auth/store/auth.reducer";
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
-import { appReducer } from "./store/app.reducer";
+import { environment } from '../environments/environment';
+import { SharedModule } from './shared/shared.module';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PixelArtModule } from './pixel-art/pixel-art.module';
+import { PostsModule } from './posts/posts.module';
+import { PortfolioModule } from './portfolio/portfolio.module';
+import { ProjectsModule } from './projects/projects.module';
+import { HomeModule } from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompletedCoursesComponent } from './completed-courses/completed-courses.component';
+import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './auth/store/auth.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducer } from './store/app.reducer';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
 
 registerLocaleData(en);
 
@@ -61,7 +63,7 @@ registerLocaleData(en);
       logOnly: environment.production,
     }),
   ],
-  providers: [DataService],
+  providers: [DataService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
