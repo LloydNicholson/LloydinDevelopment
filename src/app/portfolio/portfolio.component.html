@@ -1,19 +1,11 @@
-<div fxLayout="column"
-     fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center">
     <h2 class="header">My Skills</h2>
     <div>
         <h4>See my completed courses <a routerLink="/completed-courses">here</a>.</h4>
     </div>
     <div class="portfolio-items">
-        <nz-skeleton [nzActive]="isLoading" [nzLoading]="isLoading">
-            <div
-                fxLayout="row wrap"
-                fxLayoutAlign="center"
-                [@listState]="mySkills?.length">
-                <app-development-detail
-                    *ngFor="let skill of mySkills; let index"
-                    [skill]="skill"></app-development-detail>
-            </div>
-        </nz-skeleton>
+        <div fxLayout="row wrap" fxLayoutAlign="center" [@listState]="mySkills?.length">
+            <app-development-detail *ngFor="let skill of mySkills; let index" [skill]="skill"></app-development-detail>
+        </div>
     </div>
 </div>

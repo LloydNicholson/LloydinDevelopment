@@ -1,20 +1,13 @@
-<a [href]="project.url">
-    <mat-card class="card"
-              matRipple
-              [@hoverState]="hoverState"
-              (mouseenter)="hoverState = 'hover'"
-              (mouseleave)="hoverState = 'default'">
-        <img
-            mat-card-image
-            [src]="project.imageUrl"
-            [alt]="project.name"/>
+<a [href]="project.url" target="_blank">
+    <mat-card class="card" matRipple [@hoverState]="hoverState" (mouseenter)="hoverState = 'hover'"
+        (mouseleave)="hoverState = 'default'">
+        <img mat-card-image [src]="project.imageUrl" [alt]="project.name" />
         <mat-card-title>{{ project.name }}</mat-card-title>
         <mat-card-content>
             <p>{{ project.description }}</p>
         </mat-card-content>
-<!--        <a class="button-link" mat-stroked-button color="primary" [href]="project.url">-->
-<!--            <mat-icon>explore</mat-icon>-->
-<!--            Visit</a>-->
+        <!--        <a class="button-link" mat-stroked-button color="primary" [href]="project.url">-->
+        <!--            <mat-icon>explore</mat-icon>-->
+        <!--            Visit</a>-->
     </mat-card>
 </a>
-

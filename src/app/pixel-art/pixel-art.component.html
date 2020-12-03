@@ -1,14 +1,6 @@
-<div fxLayout="column"
-     fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center">
     <h2 class="header" fxLayoutAlign="center">My Pixel Art</h2>
-    <nz-skeleton [nzLoading]="isLoading" [nzActive]="isLoading">
-        <div
-            fxLayout="row wrap"
-            fxLayoutAlign="center"
-            [@listState]="images?.length">
-            <app-art
-                *ngFor="let image of images"
-                [image]="image"></app-art>
-        </div>
-    </nz-skeleton>
+    <div fxLayout="row wrap" fxLayoutAlign="center" [@listState]="images?.length">
+        <app-art *ngFor="let image of images" [image]="image"></app-art>
+    </div>
 </div>

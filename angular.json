@@ -35,7 +35,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -47,8 +48,6 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -59,6 +58,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -141,5 +144,8 @@
       }
     }
   },
-  "defaultProject": "LloydInDevelopment"
+  "defaultProject": "LloydInDevelopment",
+  "cli": {
+    "analytics": "9fe08ca2-a485-4e3d-bce6-3c659cc40c5b"
+  }
 }
