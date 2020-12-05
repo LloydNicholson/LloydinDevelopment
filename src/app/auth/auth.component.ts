@@ -24,7 +24,7 @@ export class AuthComponent implements OnInit {
         Validators.minLength(6),
       ]),
       confirmPassword: new FormControl('', [
-        this.currentState === 'signup'
+        this.currentState === 'signUp'
           ? Validators.required
           : Validators.nullValidator,
         Validators.minLength(6),
@@ -39,9 +39,9 @@ export class AuthComponent implements OnInit {
     const password = this.form.value.password;
     if (
       this.form.value.password === this.form.value.confirmPassword &&
-      this.currentState === 'signup'
+      this.currentState === 'signUp'
     ) {
-      this.authService.signup(email, password);
+      this.authService.signUp(email, password);
     } else if (this.currentState === 'setAuthenticated') {
       this.authService.login(email, password);
     }
@@ -49,10 +49,10 @@ export class AuthComponent implements OnInit {
   }
 
   onSwitchState() {
-    if (this.currentState === 'signup') {
+    if (this.currentState === 'signUp') {
       this.currentState = 'setAuthenticated';
     } else {
-      this.currentState = 'signup';
+      this.currentState = 'signUp';
     }
   }
 }

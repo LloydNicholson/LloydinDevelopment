@@ -49,7 +49,7 @@ export class AuthService {
     );
   }
 
-  signup(email: string, password: string) {
+  signUp(email: string, password: string) {
     this.angularFireAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(
